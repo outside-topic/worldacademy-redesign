@@ -1705,23 +1705,37 @@
      padding: 100px 0;
      /* background: linear-gradient(180deg, var(--white) 0%, var(--gold-ultra-faint) 40%, var(--gold-lighter) 100%); */
      background: var(--gold-ultra-faint);
+ }
+
+
+ .psyass_sec_box {
+     background: url(../images/s-o-c-i-a-l-c-u-t-1RT4txDDAbM-unsplash.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     border-radius: 30px;
+     height: 460px;
+ }
+
+ .psyass_sec_ov {
+     background-color: #1717179d;
+     padding: 50px;
+     height: 100%;
+     width: 100%;
+     border-radius: 30px;
 
  }
 
- .psyass_img {
-     border-radius: 25px;
-     padding: 30px;
-     background: rgba(113, 96, 39, 0.10);
 
-     img {
 
-         border-radius: 20px;
-     }
- }
 
  .psyass_text {
      h2 {
-         font-size: 30px;
+         font-size: 35px;
+         color: var(--white);
+     }
+     p{
+        font-size: 18px;
+        color: var(--white);
      }
  }
 
@@ -1741,7 +1755,7 @@
      padding: 80px 0px;
  }
 
- 
+
 
 
 
@@ -1934,9 +1948,10 @@
  .subp {
      padding: 60px 0px;
      font-weight: 500;
-     span{
-        font-size: 35px;
-        color: var(--gold);
+
+     span {
+         font-size: 35px;
+         color: var(--gold);
      }
  }
 
@@ -1953,14 +1968,16 @@
      font-size: 20px;
      padding: 35px;
      border-radius: 25px;
-     h3{
-        color: var(--gold);
-        font-weight: 700;
+
+     h3 {
+         color: var(--gold);
+         font-weight: 700;
      }
-     h4{
-        color: var(--gold);
-        font-weight: 400;
-        font-size: 18px;
+
+     h4 {
+         color: var(--gold);
+         font-weight: 400;
+         font-size: 18px;
      }
  }
 
@@ -1991,7 +2008,8 @@
  .r2l {
      margin-left: 40px;
      position: relative;
-    color: var(--gold);
+     color: var(--gold);
+
      i {
          font-size: 25px;
          z-index: 5;
@@ -2029,126 +2047,141 @@
 
 
 
-.metric-number3 {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--primary);
-    padding: 10px 20px;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    background: rgba(113, 96, 39, 0.1);
-    padding: 20px 20px;
-    border-radius: 50px;
-    transition: all normal 0.4s;
-}
-.metric-number3:hover{
-    background: var(--gold);
-    color: var(--white);
-}
+ .metric-number3 {
+     font-size: 1rem;
+     font-weight: 800;
+     color: var(--primary);
+     padding: 10px 20px;
+     line-height: 1;
+     margin-bottom: 0.5rem;
+     background: rgba(113, 96, 39, 0.1);
+     padding: 20px 20px;
+     border-radius: 50px;
+     transition: all normal 0.4s;
+ }
+
+ .metric-number3:hover {
+     background: var(--gold);
+     color: var(--white);
+ }
 
 
-.deocrate{
-    padding: 35px;
-    background: var(--gold-ultra-faint);
-    border-radius: 25px;
-    transition: all normal 0.4s;
-    p{
-        color: var(--gold);
-        font-weight: 600;
-    }
-}
-.deocrate:hover{
-    background: var(--gold);
-    p{
-        color: var(--white);
-    }
-}
+ .deocrate {
+     padding: 35px;
+     background: var(--gold-ultra-faint);
+     border-radius: 25px;
+     transition: all normal 0.4s;
 
-.optionbox{
-    padding: 40px;
-    background: var(--gold-ultra-faint);
-    border-radius: 25px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-.optionbox::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--gold-lighter);
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform .5s ease;
-    z-index: -1;
-}
+     p {
+         color: var(--gold);
+         font-weight: 600;
+     }
+ }
 
-.optionbox:hover::before {
-    transform: translate(-50%, -50%) scale(30);
-    
-}
-.optionbox:hover{
-    p,h3{
-        color: var(--white);
-    }
-}
-.taet{
-    font-size: 20px;
-    font-weight: 600;
-    span{
-        font-size: 20px;
-    }
-}
+ .deocrate:hover {
+     background: var(--gold);
 
-.iso_form{
-    background: var(--gold-ultra-faint);
-    padding: 30px;
-    border-radius: 30px;
-    h2{
-        color: var(--gold);
-        font-weight: 600;
-        font-size: 30px;
-    }
-    a{
-        color: white;
-        background-color: var(--gold-light);
-        padding: 15px 25px;
-        border-radius: 10px;
-        text-decoration: none;
-        margin-top: 20px;
-        display: inline-block;
-        transition: all normal 0.4s;
-    }
-    a:hover{
-        color: var(--gold);
-        background: var(--gray-200);
+     p {
+         color: var(--white);
+     }
+ }
 
-    }
-}
+ .optionbox {
+     padding: 40px;
+     background: var(--gold-ultra-faint);
+     border-radius: 25px;
+     position: relative;
+     overflow: hidden;
+     z-index: 1;
+ }
 
-.ut{
-    h3{
-        font-size: 35px;
-    }
-    h4{
-        font-size: 18px;
-        font-weight: 500;
+ .optionbox::before {
+     content: "";
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     background: var(--gold-lighter);
+     border-radius: 50%;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%) scale(0);
+     transition: transform .5s ease;
+     z-index: -1;
+ }
 
-    }
-}
+ .optionbox:hover::before {
+     transform: translate(-50%, -50%) scale(30);
 
-.cust{
-    background-color: var(--gold-ultra-faint);
-    display: inline-block;
-    padding: 12px;
-    border-radius: 100px;
-    i{
-        background: var(--gold);
-        color: var(--white);
-        padding: 5px 9px;
-        border-radius: 100px;
-    }
-}
+ }
+
+ .optionbox:hover {
+
+     p,
+     h3 {
+         color: var(--white);
+     }
+ }
+
+ .taet {
+     font-size: 20px;
+     font-weight: 600;
+
+     span {
+         font-size: 20px;
+     }
+ }
+
+ .iso_form {
+     background: var(--gold-ultra-faint);
+     padding: 30px;
+     border-radius: 30px;
+
+     h2 {
+         color: var(--gold);
+         font-weight: 600;
+         font-size: 30px;
+     }
+
+     a {
+         color: white;
+         background-color: var(--gold-light);
+         padding: 15px 25px;
+         border-radius: 10px;
+         text-decoration: none;
+         margin-top: 20px;
+         display: inline-block;
+         transition: all normal 0.4s;
+     }
+
+     a:hover {
+         color: var(--gold);
+         background: var(--gray-200);
+
+     }
+ }
+
+ .ut {
+     h3 {
+         font-size: 35px;
+     }
+
+     h4 {
+         font-size: 18px;
+         font-weight: 500;
+
+     }
+ }
+
+ .cust {
+     background-color: var(--gold-ultra-faint);
+     display: inline-block;
+     padding: 12px;
+     border-radius: 100px;
+
+     i {
+         background: var(--gold);
+         color: var(--white);
+         padding: 5px 9px;
+         border-radius: 100px;
+     }
+ }
