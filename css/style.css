@@ -1703,7 +1703,7 @@
 
  .psyass_sec {
      padding: 100px 0;
-     background: linear-gradient(180deg, var(--white) 0%, var(--gold-ultra-faint) 40%, var(--gold-lighter) 100%);
+     /* background: linear-gradient(180deg, var(--white) 0%, var(--gold-ultra-faint) 40%, var(--gold-lighter) 100%); */
  }
 
  .psyass_img {
@@ -1732,11 +1732,11 @@
  }
 
  .psycho_sec {
-     padding: 150px 0px;
+     padding: 80px 0px;
  }
 
  .arch_sec {
-     padding: 150px 0px;
+     padding: 80px 0px;
  }
 
  
