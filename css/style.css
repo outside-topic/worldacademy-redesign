@@ -1704,6 +1704,8 @@
  .psyass_sec {
      padding: 100px 0;
      /* background: linear-gradient(180deg, var(--white) 0%, var(--gold-ultra-faint) 40%, var(--gold-lighter) 100%); */
+     background: var(--gold-ultra-faint);
+
  }
 
  .psyass_img {
