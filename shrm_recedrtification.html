@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Filter Section</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">k
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="container" style="max-width: 960px;">
+
+            <!-- Filter Card -->
+            <div class="filter-card animate-in">
+                <div class="filter-row">
+                    <label class="filter-label" for="courseTypeFilter">
+                        <i class="bi bi-funnel"></i>
+                        Course Type
+                    </label>
+                    <div class="filter-dropdown-wrapper">
+                        <select
+                            class="filter-dropdown"
+                            id="courseTypeFilter"
+                            aria-label="Filter courses by type"
+                        >
+                            <option value="cp">Certified Professional</option>
+                            <option value="open">Diploma/ Post Graduate Diploma</option>
+                            <option value="closed">Professional Certificate/ Certificate/ Post Graduate Certificate</option>
+                            <option value="last">workshop</option>
+                        </select>
+                    </div>
+                    <div class="result-count" id="resultCount" aria-live="polite">
+                        Showing <span class="count-num" id="countNumber">12</span> courses
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Card -->
+            <div class="table-card animate-in">
+                <div class="table-responsive-wrapper">
+                    <table class="course-table" role="table" aria-label="Course listing table">
+                        <thead>
+                            <tr>
+                                <th class="col-sl" scope="col">SL NO</th>
+                                <th class="col-title" scope="col">Course Title</th>
+                                <th class="col-shrm" scope="col">SHRM</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courseTableBody">
+                            <!-- Rows rendered by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State (shown when no results) -->
+                <div class="empty-state" id="emptyState" role="status">
+                    <div class="empty-state-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="empty-state-title">No courses found</div>
+                    <div class="empty-state-text">Try selecting a different course type from the filter.</div>
+                </div>
+
+                <!-- Table Footer -->
+                <div class="table-footer" id="tableFooter">
+                    <div class="table-footer-text">
+                        Total <strong id="footerTotal">12</strong> courses in directory
+                    </div>
+                    <div class="table-footer-badge">
+                        <span class="pulse-dot"></span>
+                        SHRM Verified
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/custom.js">
+       
+    </script>
+
+</body>
+</html>
