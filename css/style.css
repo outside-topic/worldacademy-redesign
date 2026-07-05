@@ -10,16 +10,6 @@
      --gold-dark: #5a4d1f;
      --gold-darker: #3d3414;
      --white: #ffffff;
-     --gray-50: #fafafa;
-     --gray-100: #f5f5f5;
-     --gray-200: #e5e5e5;
-     --gray-300: #d4d4d4;
-     --gray-400: #a3a3a3;
-     --gray-500: #737373;
-     --gray-600: #525252;
-     --gray-700: #404040;
-     --gray-800: #262626;
-     --gray-900: #171717;
      --radius: 20px;
      --radius-sm: 12px;
      --radius-lg: 24px;
@@ -36,16 +26,6 @@
      --clr-beige: #F8F6F0;
      --clr-beige-dark: #EFECE3;
      --clr-white: #FFFFFF;
-     --clr-gray-50: #FAFAFA;
-     --clr-gray-100: #F5F5F5;
-     --clr-gray-200: #EEEEEE;
-     --clr-gray-300: #E0E0E0;
-     --clr-gray-400: #BDBDBD;
-     --clr-gray-500: #9E9E9E;
-     --clr-gray-600: #757575;
-     --clr-gray-700: #616161;
-     --clr-gray-800: #424242;
-     --clr-gray-900: #212121;
      --clr-text: #2D2A24;
      --clr-text-muted: #7A7568;
      --clr-border: #E8E4DA;
@@ -2263,7 +2243,7 @@
  .section-title {
      font-size: 28px;
      font-weight: 700;
-     color: var(--clr-gray-900);
+     color: var(--gray-900);
      letter-spacing: -0.5px;
      line-height: 1.2;
      margin-bottom: 6px;
@@ -2312,7 +2292,7 @@
  .filter-label {
      font-size: 13px;
      font-weight: 600;
-     color: var(--clr-gray-700);
+     color: var(--gray-700);
      white-space: nowrap;
      display: flex;
      align-items: center;
@@ -2336,8 +2316,8 @@
      font-family: var(--font-family);
      font-size: 14px;
      font-weight: 500;
-     color: var(--clr-gray-800);
-     background-color: var(--clr-gray-50);
+     color: var(--gray-800);
+     background-color: var(--gray-50);
      border: 1.5px solid var(--clr-border);
      border-radius: var(--radius-sm);
      appearance: none;
@@ -2369,7 +2349,7 @@
      height: 0;
      border-left: 5px solid transparent;
      border-right: 5px solid transparent;
-     border-top: 5px solid var(--clr-gray-500);
+     border-top: 5px solid var(--gray-500);
      pointer-events: none;
      transition: transform var(--transition-fast);
  }
@@ -2448,17 +2428,17 @@
  }
 
  .table-responsive-wrapper::-webkit-scrollbar-track {
-     background: var(--clr-gray-100);
+     background: var(--gray-100);
      border-radius: 10px;
  }
 
  .table-responsive-wrapper::-webkit-scrollbar-thumb {
-     background: var(--clr-gray-300);
+     background: var(--gray-300);
      border-radius: 10px;
  }
 
  .table-responsive-wrapper::-webkit-scrollbar-thumb:hover {
-     background: var(--clr-gray-400);
+     background: var(--gray-400);
  }
 
  /* ============================================
@@ -2485,7 +2465,7 @@
      font-weight: 700;
      letter-spacing: 1.2px;
      text-transform: uppercase;
-     color: var(--clr-gray-600);
+     color: var(--gray-600);
      border-bottom: 2px solid var(--clr-border);
      white-space: nowrap;
      user-select: none;
@@ -2525,7 +2505,7 @@
  .course-table tbody tr td {
      padding: 16px 20px;
      font-size: 14px;
-     color: var(--clr-gray-800);
+     color: var(--gray-800);
      border-bottom: 1px solid var(--clr-border-light);
      vertical-align: middle;
      transition: all var(--transition-base);
@@ -2541,7 +2521,7 @@
 
  /* Zebra Striping */
  .course-table tbody tr:nth-child(even) td {
-     background-color: var(--clr-gray-50);
+     background-color: var(--gray-50);
  }
 
  .course-table tbody tr:nth-child(odd) td {
@@ -2570,10 +2550,10 @@
      width: 30px;
      height: 30px;
      border-radius: 8px;
-     background: var(--clr-gray-100);
+     background: var(--gray-100);
      font-size: 12px;
      font-weight: 700;
-     color: var(--clr-gray-500);
+     color: var(--gray-500);
      transition: all var(--transition-base);
  }
 
@@ -2585,7 +2565,7 @@
  .course-name {
      font-weight: 600;
      font-size: 14.5px;
-     color: var(--clr-gray-900);
+     color: var(--gray-900);
      transition: color var(--transition-fast);
      line-height: 1.4;
  }
@@ -2726,7 +2706,7 @@
  .empty-state-title {
      font-size: 16px;
      font-weight: 600;
-     color: var(--clr-gray-800);
+     color: var(--gray-800);
      margin-bottom: 4px;
  }
 
@@ -2755,7 +2735,7 @@
  }
 
  .table-footer-text strong {
-     color: var(--clr-gray-700);
+     color: var(--gray-700);
  }
 
  .table-footer-badge {
@@ -2869,3 +2849,8 @@
     }
 }
  /* ==== resource end ==== */
+
+ .bgcg{
+    background: var(--gold-faint) !important;
+    color: var(--gold-faint);
+ }
