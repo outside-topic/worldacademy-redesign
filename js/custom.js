@@ -226,6 +226,78 @@ const courses = [
         title: "Post Graduate Certificate in Human Resource Management (PGCHRM)",
         type: "closed",
         shrm: "30"
+    },
+    {
+        id: 36,
+        title: "HR Audit: Preparation & Conduction",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 37,
+        title: "TNA: Process, Tools and Technique",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 38,
+        title: "ROI of Training",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 39,
+        title: "HR Accounting: Concept of Human Capital Management",
+        type: "last",
+        shrm: "6"
+    },
+    {
+        id: 40,
+        title: "KPI based Performance Management System",
+        type: "last",
+        shrm: "6"
+    },
+    {
+        id: 41,
+        title: "Coaching Skills for Managers",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 42,
+        title: "Competency Mapping: Tools & Techniques",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 43,
+        title: "Facilitation: Concept & Competencies",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 44,
+        title: "HR Planning: Scientific and Mathematical Calculation",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 45,
+        title: "Methods for KPI Designing",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 46,
+        title: "Methods of Recruitment & Selection",
+        type: "last",
+        shrm: "3"
+    },
+    {
+        id: 47,
+        title: "Job Analysis: Methods & Tools",
+        type: "last",
+        shrm: "3"
     }
 ];
 
