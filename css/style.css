@@ -2589,7 +2589,7 @@
 
 
 
- 
+
 
  /* ============================================
            Row Animation States
@@ -2829,28 +2829,404 @@
 
 
  /* ==== resource start ==== */
-.res_sec{
-    padding: 100px 0px;
+ .res_sec {
+     padding: 100px 0px;
 
-}
+ }
 
-.res_card{
-    padding: 30px;
-    border-radius: 25px;
-    background: var(--gold-faint);
-    color: #171717;
-    height: 525px;
-    h2{
-        font-size: 20px;
-    }
-    img{
-        border-radius: 20px;
+ .res_card {
+     padding: 30px;
+     border-radius: 25px;
+     background: var(--gold-faint);
+     color: #171717;
+     height: 525px;
 
-    }
-}
+     h2 {
+         font-size: 20px;
+     }
+
+     img {
+         border-radius: 20px;
+
+     }
+ }
+
  /* ==== resource end ==== */
 
- .bgcg{
-    background: var(--gold-faint) !important;
-    color: var(--gold-faint);
+ .bgcg {
+     background: var(--gold-faint) !important;
+     color: var(--gold-faint);
  }
+
+
+
+
+ /* search feild start */
+
+ /* ========================================
+           Section Wrapper
+        ======================================== */
+ .search-section {
+     padding: 100px 0 120px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ /* Subtle radial glow behind the form */
+ .search-section::before {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -60%);
+     width: 700px;
+     height: 700px;
+     background: radial-gradient(circle, rgba(184, 160, 74, 0.07) 0%, transparent 70%);
+     pointer-events: none;
+     z-index: 0;
+ }
+
+ .search-section .container {
+     position: relative;
+     z-index: 1;
+ }
+
+
+ /* ========================================
+           Search Container — The Main Box
+        ======================================== */
+ .search-container {
+     position: relative;
+ }
+
+ .search-box {
+     display: flex;
+     align-items: center;
+     background: var(--gold-faint);
+     border-radius: var(--radius-lg);
+     box-shadow: var(--shadow-soft);
+     border: 1.5px solid rgba(184, 160, 74, 0.08);
+     height: 72px;
+     transition: all var(--transition-base);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .search-box:hover {
+     box-shadow: var(--shadow-medium);
+     border-color: rgba(184, 160, 74, 0.15);
+ }
+
+ .search-box.focused {
+     box-shadow: var(--shadow-strong);
+     border-color: var(--gold-pale);
+ }
+
+ /* Gold accent line at top on focus */
+ .search-box.focused::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 10%;
+     right: 10%;
+     height: 2px;
+     background: linear-gradient(90deg, transparent, var(--gold-pale), var(--gold-lighter), var(--gold-pale), transparent);
+     border-radius: 0 0 4px 4px;
+     animation: shimmerIn 400ms ease forwards;
+ }
+
+ @keyframes shimmerIn {
+     from {
+         opacity: 0;
+         transform: scaleX(0.6);
+     }
+
+     to {
+         opacity: 1;
+         transform: scaleX(1);
+     }
+ }
+
+ /* ========================================
+           Search Icon (Left)
+        ======================================== */
+ .search-icon-wrapper {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding-left: 24px;
+     flex-shrink: 0;
+ }
+
+ .search-icon-wrapper i {
+     font-size: 1.25rem;
+     color: rgba(113, 96, 39, 0.35);
+     transition: color var(--transition-base);
+ }
+
+ .search-box.focused .search-icon-wrapper i {
+     color: var(--gold);
+ }
+
+ /* ========================================
+           Input Field
+        ======================================== */
+ .search-input-wrapper {
+     flex: 1;
+     position: relative;
+     min-width: 0;
+ }
+
+ .search-input {
+     width: 100%;
+     border: none;
+     outline: none;
+     background: transparent;
+     font-family: var(--font-body);
+     font-size: 1.05rem;
+     font-weight: 400;
+     color: var(--gold-darker);
+     padding: 0 12px;
+     line-height: 1.4;
+     letter-spacing: -0.005em;
+ }
+
+ .search-input::placeholder {
+     color: rgba(61, 52, 20, 0.3);
+     font-weight: 400;
+ }
+
+ /* ========================================
+           Action Icons — Clear, Filter, Mic
+        ======================================== */
+ .search-actions {
+     display: flex;
+     align-items: center;
+     gap: 4px;
+     padding-right: 8px;
+     flex-shrink: 0;
+ }
+
+ .search-action-btn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     border: none;
+     background: transparent;
+     border-radius: var(--radius-sm);
+     color: rgba(113, 96, 39, 0.3);
+     cursor: pointer;
+     transition: all var(--transition-base);
+     position: relative;
+ }
+
+ .search-action-btn:hover {
+     background: var(--gold-ultra-faint);
+     color: var(--gold);
+ }
+
+ .search-action-btn:active {
+     transform: scale(0.92);
+ }
+
+ .search-action-btn i {
+     font-size: 1.1rem;
+ }
+
+ /* Clear button — hidden by default */
+ .search-clear-btn {
+     display: none;
+ }
+
+ .search-clear-btn.visible {
+     display: flex;
+ }
+
+ /* Divider between actions and button */
+ .search-divider {
+     width: 1px;
+     height: 28px;
+     background: rgba(184, 160, 74, 0.12);
+     margin: 0 6px;
+     flex-shrink: 0;
+ }
+
+ /* ========================================
+           Search Button — Premium Gold Gradient
+        ======================================== */
+ .search-submit-btn {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     height: 48px;
+     padding: 0 28px;
+     margin-right: 12px;
+     border: none;
+     border-radius: var(--radius-md);
+     background: linear-gradient(135deg, var(--gold-lighter) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+     color: var(--white);
+     font-family: var(--font-body);
+     font-size: 0.9rem;
+     font-weight: 600;
+     letter-spacing: 0.02em;
+     cursor: pointer;
+     flex-shrink: 0;
+     box-shadow: var(--shadow-button);
+     transition: all var(--transition-smooth);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .search-submit-btn::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold-lighter) 50%, var(--gold) 100%);
+     opacity: 0;
+     transition: opacity var(--transition-base);
+ }
+
+ .search-submit-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: var(--shadow-button-hover);
+ }
+
+ .search-submit-btn:hover::before {
+     opacity: 1;
+ }
+
+ .search-submit-btn:active {
+     transform: translateY(0) scale(0.97);
+     box-shadow: var(--shadow-button);
+ }
+
+ .search-submit-btn span,
+ .search-submit-btn i {
+     position: relative;
+     z-index: 1;
+ }
+
+ .search-submit-btn i {
+     font-size: 1rem;
+ }
+
+
+ /* ========================================
+           Tooltip for filter/mic buttons
+        ======================================== */
+ .search-action-btn[data-tooltip] {
+     position: relative;
+ }
+
+
+ /* ========================================
+           Responsive Adjustments
+        ======================================== */
+ @media (max-width: 767.98px) {
+     .search-section {
+         padding: 64px 0 80px;
+     }
+
+     .search-header {
+         margin-bottom: 32px;
+     }
+
+     .search-badge {
+         margin-bottom: 20px;
+     }
+
+     .search-description {
+         font-size: 1rem;
+     }
+
+     .search-box {
+         flex-wrap: wrap;
+         height: auto;
+         padding: 8px 8px 8px 8px;
+         gap: 6px;
+     }
+
+     .search-icon-wrapper {
+         padding-left: 16px;
+         padding-top: 8px;
+     }
+
+     .search-input-wrapper {
+         flex: 1 1 100%;
+         order: 2;
+         padding: 4px 12px;
+     }
+
+     .search-input {
+         font-size: 1rem;
+         padding: 6px 0;
+     }
+
+     .search-actions {
+         order: 1;
+         padding-right: 4px;
+         padding-top: 4px;
+         margin-left: auto;
+     }
+
+     .search-divider {
+         display: none;
+     }
+
+     .search-submit-btn {
+         order: 3;
+         width: calc(100% - 8px);
+         height: 50px;
+         margin: 4px 4px 4px 52px;
+         justify-content: center;
+         border-radius: var(--radius-sm);
+     }
+
+     .search-helper {
+         margin-top: 16px;
+         gap: 6px;
+     }
+
+     .search-helper-tag {
+         font-size: 0.72rem;
+         padding: 3px 10px;
+     }
+
+     .search-dropdown {
+         left: -8px;
+         right: -8px;
+     }
+ }
+
+ @media (max-width: 400px) {
+     .search-heading {
+         font-size: 1.7rem;
+     }
+
+     .search-submit-btn {
+         margin-left: 44px;
+         padding: 0 20px;
+         font-size: 0.85rem;
+     }
+ }
+
+ /* ========================================
+           Reduced Motion Preference
+        ======================================== */
+ @media (prefers-reduced-motion: reduce) {
+
+     *,
+     *::before,
+     *::after {
+         animation-duration: 0.01ms !important;
+         transition-duration: 0.01ms !important;
+     }
+ }
+
+ .wt{
+    color: var(--white);
+ }
+
+ /* search feild end */
