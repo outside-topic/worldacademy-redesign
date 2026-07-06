@@ -39,6 +39,31 @@
      --transition-fast: 200ms ease;
      --transition-base: 300ms ease;
      --transition-slow: 400ms ease;
+     /* Semantic Tokens */
+     --text-primary: #1a1a1a;
+     --text-secondary: #6b6b6b;
+     --text-muted: #a3a3a3;
+
+     /* Border Tokens */
+     --border-gold: rgba(113, 96, 39, 0.15);
+     --border-gold-hover: rgba(113, 96, 39, 0.25);
+
+     /* Shadow Tokens */
+     --shadow-card: 0 4px 32px rgba(113, 96, 39, 0.07),
+         0 1px 4px rgba(0, 0, 0, 0.03);
+     --shadow-card-hover: 0 12px 48px rgba(113, 96, 39, 0.12),
+         0 2px 8px rgba(0, 0, 0, 0.04);
+     --shadow-input-focus: 0 0 0 4px rgba(113, 96, 39, 0.08);
+     --shadow-btn-hover: 0 8px 28px rgba(113, 96, 39, 0.32);
+     --shadow-btn-active: 0 2px 12px rgba(113, 96, 39, 0.2);
+
+     /* Radius Tokens */
+     --radius-pill: 9999px;
+     --radius-card: 24px;
+
+     /* Transition */
+     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
  }
 
  /* ===== BASE & RESET ===== */
@@ -2863,370 +2888,577 @@
 
  /* search feild start */
 
- /* ========================================
-           Section Wrapper
-        ======================================== */
+
+ /* =============================================
+           Section — Background & Spacing
+           ============================================= */
  .search-section {
-     padding: 100px 0 120px;
+     padding: 64px 0 80px;
+     background: var(--gold-faint);
      position: relative;
      overflow: hidden;
  }
 
- /* Subtle radial glow behind the form */
+ /* Very subtle top gold radial glow */
  .search-section::before {
      content: '';
      position: absolute;
-     top: 50%;
+     top: -160px;
      left: 50%;
-     transform: translate(-50%, -60%);
-     width: 700px;
-     height: 700px;
-     background: radial-gradient(circle, rgba(184, 160, 74, 0.07) 0%, transparent 70%);
+     transform: translateX(-50%);
+     width: 600px;
+     height: 360px;
+     background: radial-gradient(ellipse at center,
+             rgba(180, 160, 74, 0.05) 0%,
+             transparent 70%);
      pointer-events: none;
-     z-index: 0;
  }
 
- .search-section .container {
-     position: relative;
-     z-index: 1;
- }
-
-
- /* ========================================
-           Search Container — The Main Box
-        ======================================== */
- .search-container {
-     position: relative;
- }
-
- .search-box {
-     display: flex;
-     align-items: center;
-     background: var(--gold-faint);
-     border-radius: var(--radius-lg);
-     box-shadow: var(--shadow-soft);
-     border: 1.5px solid rgba(184, 160, 74, 0.08);
-     height: 72px;
-     transition: all var(--transition-base);
-     position: relative;
-     overflow: hidden;
- }
-
- .search-box:hover {
-     box-shadow: var(--shadow-medium);
-     border-color: rgba(184, 160, 74, 0.15);
- }
-
- .search-box.focused {
-     box-shadow: var(--shadow-strong);
-     border-color: var(--gold-pale);
- }
-
- /* Gold accent line at top on focus */
- .search-box.focused::after {
+ /* Subtle bottom ambient glow */
+ .search-section::after {
      content: '';
      position: absolute;
-     top: 0;
-     left: 10%;
-     right: 10%;
-     height: 2px;
-     background: linear-gradient(90deg, transparent, var(--gold-pale), var(--gold-lighter), var(--gold-pale), transparent);
-     border-radius: 0 0 4px 4px;
-     animation: shimmerIn 400ms ease forwards;
+     bottom: -80px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 400px;
+     height: 200px;
+     background: radial-gradient(ellipse at center,
+             rgba(113, 96, 39, 0.025) 0%,
+             transparent 70%);
+     pointer-events: none;
  }
 
- @keyframes shimmerIn {
+ /* Extended padding for large screens */
+ @media (min-width: 992px) {
+     .search-section {
+         padding: 60px 0 60px;
+     }
+ }
+
+ /* Constrain container to ~700px */
+ .search-section>.container {
+     max-width: 700px;
+ }
+
+ /* =============================================
+           Search Card — Glassmorphism
+           ============================================= */
+ .search-card {
+     background: rgba(255, 255, 255, 0.78);
+     backdrop-filter: blur(28px);
+     -webkit-backdrop-filter: blur(28px);
+     border: 1px solid var(--border-gold);
+     border-radius: 100px;
+     box-shadow: var(--shadow-card);
+     padding: 20px;
+     position: relative;
+     transition: box-shadow 0.4s var(--ease-smooth),
+         transform 0.4s var(--ease-smooth);
+
+     /* Entry animation — starts invisible */
+     opacity: 0;
+     animation: cardFadeIn 0.75s var(--ease-out-expo) 0.1s forwards;
+ }
+
+ .search-card:hover {
+     box-shadow: var(--shadow-card-hover);
+     transform: translateY(-3px);
+ }
+
+ /* =============================================
+           Fade-In Animation
+           ============================================= */
+ @keyframes cardFadeIn {
      from {
          opacity: 0;
-         transform: scaleX(0.6);
+         transform: translateY(28px);
      }
 
      to {
          opacity: 1;
-         transform: scaleX(1);
+         transform: translateY(0);
      }
  }
 
- /* ========================================
-           Search Icon (Left)
-        ======================================== */
- .search-icon-wrapper {
+ /* =============================================
+           Typography — Title
+           ============================================= */
+ .search-title {
+     font-size: 32px;
+     font-weight: 700;
+     color: var(--text-primary);
+     text-align: center;
+     line-height: 1.15;
+     letter-spacing: -0.025em;
+     margin-bottom: 10px;
+ }
+
+ /* =============================================
+           Typography — Subtitle
+           ============================================= */
+ .search-subtitle {
+     font-size: 15px;
+     font-weight: 400;
+     color: var(--text-secondary);
+     text-align: center;
+     max-width: 500px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 30px;
+     line-height: 1.6;
+ }
+
+ .search-subtitle .gold-accent {
+     color: var(--gold-primary);
+     font-weight: 500;
+ }
+
+ /* =============================================
+           Responsive Typography & Card Padding
+           ============================================= */
+ @media (max-width: 575px) {
+     .search-title {
+         font-size: 26px;
+     }
+
+     .search-subtitle {
+         font-size: 14px;
+         margin-bottom: 26px;
+     }
+
+     .search-card {
+         padding: 28px 20px 24px;
+     }
+ }
+
+ @media (max-width: 430px) {
+     .search-title {
+         font-size: 24px;
+     }
+
+     .search-subtitle {
+         margin-bottom: 22px;
+     }
+ }
+
+ /* =============================================
+           Search Wrapper — Flex Layout
+           ============================================= */
+ .search-wrapper {
      display: flex;
-     align-items: center;
-     justify-content: center;
-     padding-left: 24px;
-     flex-shrink: 0;
+     gap: 12px;
+     align-items: stretch;
  }
 
- .search-icon-wrapper i {
-     font-size: 1.25rem;
-     color: rgba(113, 96, 39, 0.35);
-     transition: color var(--transition-base);
- }
-
- .search-box.focused .search-icon-wrapper i {
-     color: var(--gold);
- }
-
- /* ========================================
-           Input Field
-        ======================================== */
- .search-input-wrapper {
+ /* =============================================
+           Input Container — Holds icon + input + clear
+           ============================================= */
+ .input-container {
      flex: 1;
      position: relative;
+     display: flex;
+     align-items: center;
      min-width: 0;
+     /* Prevents flex overflow */
  }
 
+ /* =============================================
+           Search Icon (Left Side of Input)
+           ============================================= */
+ .input-search-icon {
+     position: absolute;
+     left: 20px;
+     top: 50%;
+     transform: translateY(-50%);
+     color: var(--text-muted);
+     display: flex;
+     align-items: center;
+     pointer-events: none;
+     z-index: 2;
+     transition: color 0.3s var(--ease-smooth);
+ }
+
+ /* Gold icon on focus */
+ .input-container:focus-within .input-search-icon {
+     color: var(--gold-primary);
+ }
+
+ /* =============================================
+           Search Input Field
+           ============================================= */
  .search-input {
      width: 100%;
-     border: none;
-     outline: none;
-     background: transparent;
-     font-family: var(--font-body);
-     font-size: 1.05rem;
+     height: 60px;
+     border: 1px solid var(--border-gold);
+     border-radius: var(--radius-pill);
+     padding: 0 48px 0 52px;
+     font-size: 15px;
      font-weight: 400;
-     color: var(--gold-darker);
-     padding: 0 12px;
-     line-height: 1.4;
-     letter-spacing: -0.005em;
+     color: var(--text-primary);
+     background: var(--white);
+     outline: none;
+     font-family: inherit;
+     transition: border-color 0.3s var(--ease-smooth),
+         box-shadow 0.3s var(--ease-smooth),
+         background-color 0.3s var(--ease-smooth);
  }
 
  .search-input::placeholder {
-     color: rgba(61, 52, 20, 0.3);
+     color: var(--text-muted);
      font-weight: 400;
  }
 
- /* ========================================
-           Action Icons — Clear, Filter, Mic
-        ======================================== */
- .search-actions {
-     display: flex;
-     align-items: center;
-     gap: 4px;
-     padding-right: 8px;
-     flex-shrink: 0;
+ /* Focus state — gold ring, no default outline */
+ .search-input:focus {
+     border-color: var(--gold-primary);
+     box-shadow: var(--shadow-input-focus);
  }
 
- .search-action-btn {
+ /* Hover state — subtle border darkening */
+ .search-input:hover:not(:focus) {
+     border-color: var(--border-gold-hover);
+ }
+
+ /* =============================================
+           Clear Button (X) — Hidden by Default
+           ============================================= */
+ .clear-btn {
+     position: absolute;
+     right: 14px;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 28px;
+     height: 28px;
+     border-radius: 50%;
+     border: none;
+     background: var(--gold-faint);
+     color: var(--gold-dark);
+     cursor: pointer;
+     display: none;
+     /* Shown via JS when typing */
+     align-items: center;
+     justify-content: center;
+     padding: 0;
+     z-index: 2;
+     transition: background-color 0.2s var(--ease-smooth),
+         color 0.2s var(--ease-smooth),
+         transform 0.2s var(--ease-smooth);
+ }
+
+ .clear-btn:hover {
+     background: var(--gold-pale);
+     color: var(--gold-darker);
+     transform: translateY(-50%) scale(1.08);
+ }
+
+ .clear-btn:active {
+     transform: translateY(-50%) scale(0.95);
+ }
+
+ .clear-btn:focus-visible {
+     outline: 2px solid var(--gold-primary);
+     outline-offset: 2px;
+ }
+
+ /* =============================================
+           Search Button — Gold Gradient Pill
+           ============================================= */
+ .search-btn {
+     height: 60px;
+     min-width: 142px;
+     padding: 0 28px;
+     border: none;
+     border-radius: var(--radius-pill);
+     background: linear-gradient(135deg,
+             var(--gold-lighter) 0%,
+             var(--gold) 45%,
+             var(--gold-dark) 100%);
+     background-size: 200% 100%;
+     background-position: 0% center;
+     color: var(--white);
+     font-size: 15px;
+     font-weight: 600;
+     font-family: inherit;
+     letter-spacing: 0.01em;
+     cursor: pointer;
      display: flex;
      align-items: center;
      justify-content: center;
-     width: 40px;
-     height: 40px;
-     border: none;
-     background: transparent;
-     border-radius: var(--radius-sm);
-     color: rgba(113, 96, 39, 0.3);
-     cursor: pointer;
-     transition: all var(--transition-base);
-     position: relative;
- }
-
- .search-action-btn:hover {
-     background: var(--gold-ultra-faint);
-     color: var(--gold);
- }
-
- .search-action-btn:active {
-     transform: scale(0.92);
- }
-
- .search-action-btn i {
-     font-size: 1.1rem;
- }
-
- /* Clear button — hidden by default */
- .search-clear-btn {
-     display: none;
- }
-
- .search-clear-btn.visible {
-     display: flex;
- }
-
- /* Divider between actions and button */
- .search-divider {
-     width: 1px;
-     height: 28px;
-     background: rgba(184, 160, 74, 0.12);
-     margin: 0 6px;
+     gap: 8px;
+     white-space: nowrap;
      flex-shrink: 0;
- }
-
- /* ========================================
-           Search Button — Premium Gold Gradient
-        ======================================== */
- .search-submit-btn {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     height: 48px;
-     padding: 0 28px;
-     margin-right: 12px;
-     border: none;
-     border-radius: var(--radius-md);
-     background: linear-gradient(135deg, var(--gold-lighter) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-     color: var(--white);
-     font-family: var(--font-body);
-     font-size: 0.9rem;
-     font-weight: 600;
-     letter-spacing: 0.02em;
-     cursor: pointer;
-     flex-shrink: 0;
-     box-shadow: var(--shadow-button);
-     transition: all var(--transition-smooth);
      position: relative;
      overflow: hidden;
+
+     transition: transform 0.3s var(--ease-smooth),
+         box-shadow 0.3s var(--ease-smooth),
+         background-position 0.5s var(--ease-smooth);
+
+     span {
+         color: var(--white);
+     }
  }
 
- .search-submit-btn::before {
+ .search-btn:focus-visible {
+     outline: 2px solid var(--gold-primary);
+     outline-offset: 3px;
+ }
+
+ /* Hover — lift, shift gradient, shadow */
+ .search-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: var(--shadow-btn-hover);
+     background-position: 100% center;
+ }
+
+ /* Active — press down */
+ .search-btn:active {
+     transform: translateY(0) scale(0.97);
+     box-shadow: var(--shadow-btn-active);
+     transition-duration: 0.1s;
+ }
+
+ /* =============================================
+           Shimmer Animation — Button Hover
+           ============================================= */
+ .search-btn::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 50%;
+     height: 100%;
+     background: linear-gradient(100deg,
+             transparent 0%,
+             rgba(255, 255, 255, 0.18) 45%,
+             rgba(255, 255, 255, 0.22) 50%,
+             rgba(255, 255, 255, 0.18) 55%,
+             transparent 100%);
+     pointer-events: none;
+     transition: none;
+ }
+
+ .search-btn:hover::before {
+     animation: btnShimmer 1.4s var(--ease-smooth) forwards;
+ }
+
+ @keyframes btnShimmer {
+     0% {
+         left: -100%;
+     }
+
+     100% {
+         left: 180%;
+     }
+ }
+
+ /* =============================================
+           Mobile — Stack Vertically at 430px
+           ============================================= */
+ @media (max-width: 430px) {
+     .search-wrapper {
+         flex-direction: column;
+         gap: 10px;
+     }
+
+     .search-input {
+         height: 54px;
+         font-size: 16px;
+         /* Prevents iOS zoom */
+     }
+
+     .search-btn {
+         width: 100%;
+         min-width: unset;
+         height: 54px;
+     }
+
+     .search-section {
+         padding: 44px 0 60px;
+     }
+ }
+
+ /* =============================================
+           Reduced Motion — Accessibility
+           ============================================= */
+ @media (prefers-reduced-motion: reduce) {
+     .search-card {
+         animation: none;
+         opacity: 1;
+     }
+
+     .search-btn::before {
+         display: none;
+     }
+
+     .search-card,
+     .search-btn,
+     .clear-btn,
+     .search-input {
+         transition-duration: 0.01ms !important;
+     }
+
+     .search-card:hover,
+     .search-btn:hover {
+         transform: none;
+     }
+ }
+
+ /* =============================================
+           Fine Detail — Inner Highlight on Card
+           ============================================= */
+ .search-card::before {
      content: '';
      position: absolute;
      inset: 0;
-     background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold-lighter) 50%, var(--gold) 100%);
-     opacity: 0;
-     transition: opacity var(--transition-base);
+     border-radius: 100px;
+     background: linear-gradient(180deg,
+             rgba(255, 255, 255, 0.5) 0%,
+             transparent 40%);
+     pointer-events: none;
+     z-index: 0;
  }
 
- .search-submit-btn:hover {
-     transform: translateY(-2px);
-     box-shadow: var(--shadow-button-hover);
- }
-
- .search-submit-btn:hover::before {
-     opacity: 1;
- }
-
- .search-submit-btn:active {
-     transform: translateY(0) scale(0.97);
-     box-shadow: var(--shadow-button);
- }
-
- .search-submit-btn span,
- .search-submit-btn i {
+ /* Ensure content sits above the highlight layer */
+ .search-card>* {
      position: relative;
      z-index: 1;
  }
 
- .search-submit-btn i {
-     font-size: 1rem;
- }
 
-
- /* ========================================
-           Tooltip for filter/mic buttons
-        ======================================== */
- .search-action-btn[data-tooltip] {
+ /* ==============================================
+           Content Container
+           ============================================== */
+ .hero-content {
      position: relative;
+     z-index: 1;
+     text-align: center;
+     padding: 30px 0px;
+
+     /* Fade-in animation */
+     opacity: 0;
+     animation: heroContentIn 0.9s var(--ease-out-expo) 0.15s forwards;
  }
 
-
- /* ========================================
-           Responsive Adjustments
-        ======================================== */
- @media (max-width: 767.98px) {
-     .search-section {
-         padding: 64px 0 80px;
+ @keyframes heroContentIn {
+     from {
+         opacity: 0;
+         transform: translateY(20px);
      }
 
-     .search-header {
-         margin-bottom: 32px;
-     }
-
-     .search-badge {
-         margin-bottom: 20px;
-     }
-
-     .search-description {
-         font-size: 1rem;
-     }
-
-     .search-box {
-         flex-wrap: wrap;
-         height: auto;
-         padding: 8px 8px 8px 8px;
-         gap: 6px;
-     }
-
-     .search-icon-wrapper {
-         padding-left: 16px;
-         padding-top: 8px;
-     }
-
-     .search-input-wrapper {
-         flex: 1 1 100%;
-         order: 2;
-         padding: 4px 12px;
-     }
-
-     .search-input {
-         font-size: 1rem;
-         padding: 6px 0;
-     }
-
-     .search-actions {
-         order: 1;
-         padding-right: 4px;
-         padding-top: 4px;
-         margin-left: auto;
-     }
-
-     .search-divider {
-         display: none;
-     }
-
-     .search-submit-btn {
-         order: 3;
-         width: calc(100% - 8px);
-         height: 50px;
-         margin: 4px 4px 4px 52px;
-         justify-content: center;
-         border-radius: var(--radius-sm);
-     }
-
-     .search-helper {
-         margin-top: 16px;
-         gap: 6px;
-     }
-
-     .search-helper-tag {
-         font-size: 0.72rem;
-         padding: 3px 10px;
-     }
-
-     .search-dropdown {
-         left: -8px;
-         right: -8px;
+     to {
+         opacity: 1;
+         transform: translateY(0);
      }
  }
 
- @media (max-width: 400px) {
-     .search-heading {
-         font-size: 1.7rem;
-     }
-
-     .search-submit-btn {
-         margin-left: 44px;
-         padding: 0 20px;
-         font-size: 0.85rem;
+ /* Responsive content padding */
+ @media (max-width: 991.98px) {
+     .hero-content {
+         padding: 36px 0 44px;
      }
  }
 
- /* ========================================
-           Reduced Motion Preference
-        ======================================== */
- @media (prefers-reduced-motion: reduce) {
-
-     *,
-     *::before,
-     *::after {
-         animation-duration: 0.01ms !important;
-         transition-duration: 0.01ms !important;
+ @media (max-width: 575.98px) {
+     .hero-content {
+         padding: 28px 0 36px;
      }
+     
  }
 
- .wt{
-    color: var(--white);
+ @media (max-width: 430px) {
+    .search-card{
+        border-radius: 45px !important;
+    }
  }
+
+ /* ==============================================
+           Breadcrumb
+           ============================================== */
+ .hero-breadcrumb {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     list-style: none;
+     padding: 0;
+     margin: 0 0 20px;
+     font-size: 12px;
+     font-weight: 500;
+     letter-spacing: 0.08em;
+     text-transform: uppercase;
+ }
+
+ .hero-breadcrumb li {
+     margin: 0;
+ }
+
+ .hero-breadcrumb a {
+     color: var(--text-breadcrumb);
+     text-decoration: none;
+     transition: color 0.25s ease;
+ }
+
+ .hero-breadcrumb a:hover {
+     color: var(--gold);
+ }
+
+ .hero-breadcrumb a:focus-visible {
+     outline: 2px solid var(--gold);
+     outline-offset: 3px;
+     border-radius: 2px;
+ }
+
+ .hero-breadcrumb-sep {
+     color: var(--text-breadcrumb);
+     opacity: 0.4;
+     font-weight: 400;
+     user-select: none;
+ }
+
+ .hero-breadcrumb-current {
+     color: #716027;
+     font-weight: 600;
+ }
+
+ /* ==============================================
+           Decorative Separator — Thin Gold Line
+           Between breadcrumb and title
+           ============================================== */
+ .hero-separator {
+     width: 36px;
+     height: 2px;
+     margin: 0 auto 10px;
+     background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+     border-radius: 1px;
+     opacity: 0.6;
+ }
+
+ /* ==============================================
+           Title — Primary Heading
+           ============================================== */
+ .hero-title {
+     font-size: 56px;
+     font-weight: 800;
+     color: var(--text-title);
+     line-height: 1.1;
+     letter-spacing: -0.035em;
+     margin: 0 0 20px;
+ }
+
+ /* Gold gradient accent on "Certificate" */
+ .hero-title-accent {
+     background: linear-gradient(135deg,
+             var(--gold-lighter) 0%,
+             var(--gold) 40%,
+             var(--gold-dark) 100%);
+     -webkit-background-clip: text;
+     background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+
+
 
  /* search feild end */
