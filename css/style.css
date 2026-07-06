@@ -707,10 +707,12 @@
      .who-img-wrapper img {
          height: 400px;
      }
+
      .glass-card {
          padding: 2rem;
          margin-top: 2rem;
      }
+
      .mv-card {
          padding: 2rem 1.75rem;
      }
@@ -721,7 +723,7 @@
          font-size: 2.25rem;
      }
 
-     
+
 
      .section-title {
          font-size: 1.75rem;
@@ -2386,3 +2388,471 @@
 
 
  /* search feild end */
+
+
+
+ /* faq start  */
+ ::selection {
+     background-color: var(--gold-faint);
+     color: var(--gold-dark);
+ }
+
+ :focus-visible {
+     outline: 2px solid var(--gold);
+     outline-offset: 2px;
+     border-radius: var(--radius-sm);
+ }
+
+ /* Shared section spacing */
+ .section-padding {
+     padding-top: 4rem;
+     padding-bottom: 4rem;
+ }
+
+ @media (min-width: 992px) {
+     .section-padding {
+         padding-top: 6.5rem;
+         padding-bottom: 6.5rem;
+     }
+ }
+
+ /* Shared section header components */
+ .section-label {
+     display: inline-block;
+     font-size: 0.75rem;
+     font-weight: 600;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+     color: var(--gold);
+     margin-bottom: 0.75rem;
+ }
+
+ .section-title {
+     font-size: 1.75rem;
+     font-weight: 700;
+     color: var(--text-primary);
+     margin-bottom: 0.75rem;
+     line-height: 1.2;
+ }
+
+ .section-desc {
+     font-size: 1rem;
+     color: var(--clr-text-muted);
+     line-height: 1.65;
+     max-width: 540px;
+ }
+
+ @media (min-width: 768px) {
+     .section-title {
+         font-size: 2.25rem;
+     }
+ }
+
+ /* Shared reveal animation utility */
+ .reveal {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+ }
+
+ .reveal.visible {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+
+
+
+
+ @media (prefers-reduced-motion: reduce) {
+
+     *,
+     *::before,
+     *::after {
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+     }
+
+     html {
+         scroll-behavior: auto;
+     }
+
+     .reveal {
+         opacity: 1;
+         transform: none;
+     }
+ }
+
+
+ /* ============================================================
+           SECTION 1 — HERO
+           Delete this entire block to remove the Hero section.
+           ============================================================ */
+ 
+
+
+ .hero-title {
+     font-size: 2rem;
+     font-weight: 700;
+     color: var(--text-primary);
+     line-height: 1.15;
+     margin-bottom: 1rem;
+     letter-spacing: -0.02em;
+ }
+
+ @media (min-width: 576px) {
+     .hero-title {
+         font-size: 2.5rem;
+     }
+ }
+
+ @media (min-width: 992px) {
+     .hero-title {
+         font-size: 3.25rem;
+     }
+ }
+
+ 
+
+ .glass-card {
+     position: absolute;
+     background: rgba(255, 255, 255, 0.7);
+     backdrop-filter: blur(16px);
+     -webkit-backdrop-filter: blur(16px);
+     border: 1px solid rgba(255, 255, 255, 0.6);
+     border-radius: var(--radius-lg);
+     padding: 1.25rem 1.5rem;
+     box-shadow: var(--shadow-card);
+     transition: transform var(--transition-slow) var(--ease-out-expo);
+ }
+
+ .glass-card:hover {
+     transform: translateY(-4px) !important;
+ }
+
+
+ @keyframes floatCard1 {
+
+     0%,
+     100% {
+         transform: rotate(2deg) translateY(0);
+     }
+
+     50% {
+         transform: rotate(2deg) translateY(-8px);
+     }
+ }
+
+ @keyframes floatCard2 {
+
+     0%,
+     100% {
+         transform: rotate(-1.5deg) translateY(0);
+     }
+
+     50% {
+         transform: rotate(-1.5deg) translateY(-10px);
+     }
+ }
+
+ @keyframes floatCard3 {
+
+     0%,
+     100% {
+         transform: rotate(1deg) translateY(0);
+     }
+
+     50% {
+         transform: rotate(1deg) translateY(-6px);
+     }
+ }
+
+ 
+
+ 
+
+ 
+
+ .search-wrapper {
+     position: relative;
+     max-width: 680px;
+     margin: 0 auto;
+     background: var(--clr-white);
+     border: 1px solid var(--clr-border);
+     border-radius: var(--radius-pill);
+     box-shadow: var(--shadow-medium);
+     transition: all var(--transition-base) var(--ease-smooth);
+     display: flex;
+     align-items: center;
+     padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+ }
+
+ .search-wrapper:focus-within {
+     border-color: var(--border-gold-hover);
+     box-shadow: var(--shadow-medium), var(--shadow-input-focus);
+ }
+
+
+
+ .search-input {
+     flex: 1;
+     border: none;
+     outline: none;
+     background: transparent;
+     font-family: var(--font-body);
+     font-size: 0.95rem;
+     color: var(--clr-text);
+     padding: 0.7rem 0;
+ }
+
+ .search-input::placeholder {
+     color: var(--text-muted);
+ }
+
+ 
+
+
+
+
+ /* ============================================================
+           SECTION 4 — FAQ ACCORDION
+           Delete this entire block to remove the FAQ section.
+           ============================================================ */
+ .faq-section {
+     background: var(--clr-beige);
+ }
+
+ .faq-sticky-nav {
+     position: sticky;
+     top: 2rem;
+ }
+
+ .sticky-nav-title {
+     font-size: 0.7rem;
+     font-weight: 600;
+     letter-spacing: 0.1em;
+     text-transform: uppercase;
+     color: var(--text-muted);
+     margin-bottom: 1rem;
+     padding-left: 1rem;
+ }
+
+ .sticky-nav-list {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .sticky-nav-item {
+     display: flex;
+     align-items: center;
+     gap: 0.75rem;
+     padding: 0.65rem 1rem;
+     font-size: 0.85rem;
+     font-weight: 500;
+     color: var(--clr-text-muted);
+     border-left: 3px solid transparent;
+     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+     cursor: pointer;
+     transition: all var(--transition-fast) var(--ease-smooth);
+     margin-bottom: 0.15rem;
+ }
+
+ .sticky-nav-item:hover {
+     color: var(--clr-text);
+     background: var(--clr-primary-bg);
+ }
+
+ .sticky-nav-item.active {
+     color: var(--gold-dark);
+     background: var(--gold-faint);
+     border-left-color: var(--gold);
+     font-weight: 600;
+ }
+
+ .sticky-nav-item i {
+     font-size: 0.9rem;
+     width: 20px;
+     text-align: center;
+     flex-shrink: 0;
+ }
+
+ .faq-indicator {
+     font-size: 0.85rem;
+     color: var(--clr-text-muted);
+     margin-bottom: 1.5rem;
+ }
+
+ .faq-indicator strong {
+     color: var(--clr-text);
+     font-weight: 600;
+ }
+
+ .faq-accordion {
+     display: flex;
+     flex-direction: column;
+     gap: 0.75rem;
+ }
+
+ .faq-accordion .accordion-item {
+     background: var(--clr-white);
+     border: 1px solid var(--clr-border-light);
+     border-radius: var(--radius-lg) !important;
+     box-shadow: var(--shadow-card);
+     overflow: hidden;
+     transition: all var(--transition-base) var(--ease-smooth);
+     margin-bottom: 0 !important;
+ }
+
+ .faq-accordion .accordion-item:hover {
+     border-color: var(--border-gold);
+     box-shadow: var(--shadow-card-hover);
+ }
+
+ .faq-accordion .accordion-item:has(.accordion-collapse.show) {
+     border-color: var(--border-gold-hover);
+     box-shadow: var(--shadow-card-hover);
+ }
+
+ .faq-accordion .accordion-button {
+     background: transparent;
+     border: none;
+     box-shadow: none !important;
+     padding: 1.25rem 1.5rem;
+     font-family: var(--font-body);
+     font-size: 0.95rem;
+     font-weight: 600;
+     color: var(--text-primary);
+     line-height: 1.45;
+     border-radius: var(--radius-lg) !important;
+     transition: all var(--transition-fast) var(--ease-smooth);
+     gap: 1rem;
+ }
+
+ .faq-accordion .accordion-button::after {
+     display: none !important;
+ }
+
+ .faq-accordion .accordion-button:not(.collapsed) {
+     background: var(--gold-ultra-faint);
+     color: var(--gold-dark);
+ }
+
+ .faq-accordion .accordion-button:hover:not(.collapsed) {
+     background: var(--gold-faint);
+ }
+
+ .faq-accordion .accordion-button .btn-text {
+     flex: 1;
+     text-align: left;
+ }
+
+ .accordion-chevron {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 28px;
+     height: 28px;
+     border-radius: 50%;
+     background: var(--clr-primary-bg);
+     color: var(--gold);
+     font-size: 0.85rem;
+     flex-shrink: 0;
+     transition: all var(--transition-base) var(--ease-smooth);
+ }
+
+ .faq-accordion .accordion-button:not(.collapsed) .accordion-chevron {
+     transform: rotate(180deg);
+     background: var(--gold-faint);
+     color: var(--gold-dark);
+ }
+
+ .faq-accordion .accordion-body {
+     padding: 1.5rem 1.5rem;
+     font-size: 0.9rem;
+     color: var(--clr-text-muted);
+     line-height: 1.75;
+ }
+
+ .faq-item-wrapper {
+     animation: faqFadeIn var(--transition-base) var(--ease-out-expo) forwards;
+ }
+
+ .faq-item-wrapper.hidden {
+     display: none;
+ }
+
+ @keyframes faqFadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(8px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .no-results {
+     text-align: center;
+     padding: 4rem 1.5rem;
+     display: none;
+ }
+
+ .no-results.visible {
+     display: block;
+ }
+
+ .no-results-icon {
+     width: 64px;
+     height: 64px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: var(--gold-faint);
+     color: var(--gold);
+     border-radius: 50%;
+     font-size: 1.5rem;
+     margin: 0 auto 1.25rem;
+ }
+
+ .no-results h3 {
+     font-size: 1.15rem;
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+ }
+
+ .no-results p {
+     font-size: 0.9rem;
+     color: var(--clr-text-muted);
+ }
+
+ .no-results-reset {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.4rem;
+     margin-top: 1rem;
+     padding: 0.5rem 1.25rem;
+     font-size: 0.85rem;
+     font-weight: 500;
+     color: var(--gold-dark);
+     background: var(--gold-faint);
+     border: 1px solid var(--border-gold);
+     border-radius: var(--radius-pill);
+     cursor: pointer;
+     transition: all var(--transition-fast) var(--ease-smooth);
+     font-family: var(--font-body);
+ }
+
+ .no-results-reset:hover {
+     background: var(--gold-faint);
+     border-color: var(--border-gold-hover);
+     box-shadow: var(--shadow-soft);
+ }
+
+ /* END SECTION 4 — FAQ ACCORDION */
+
+
+ /* faq end */
