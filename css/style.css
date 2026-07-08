@@ -1944,6 +1944,7 @@
      display: flex;
      gap: 12px;
      align-items: stretch;
+     border-radius: 50px;
  }
 
  /* =============================================
@@ -3144,7 +3145,7 @@
 
 
 
- 
+
 
 
 
@@ -3479,6 +3480,12 @@
      .col-shrm {
          width: 80px;
      }
+ }
+
+ .shp {
+     padding: 10px 25px;
+     background: rgba(255, 255, 255, 0.619);
+     display: inline-block;
  }
 
  /* shrm end */
