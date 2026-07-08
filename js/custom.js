@@ -297,8 +297,7 @@ const tableBody = document.getElementById('courseTableBody');
 const resultCountEl = document.getElementById('resultCount');
 const countNumberEl = document.getElementById('countNumber');
 const emptyStateEl = document.getElementById('emptyState');
-const tableFooterEl = document.getElementById('tableFooter');
-const footerTotalEl = document.getElementById('footerTotal');
+
 
 // ---- Helper: Generate SHRM Badge HTML ----
 function getShrmBadge(value) {

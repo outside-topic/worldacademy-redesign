@@ -281,8 +281,12 @@
             width: 80px;
         }
 
-        .col-shrm {
-            width: 100px;
+        .col-hrci-type {
+            width: 140px;
+        }
+
+        .col-hrci {
+            width: 90px;
         }
 
         /* ---- Header ---- */
@@ -303,7 +307,8 @@
         }
 
         .course-table thead th.col-sl,
-        .course-table thead th.col-shrm {
+        .course-table thead th.col-hrci-type,
+        .course-table thead th.col-hrci {
             text-align: center;
         }
 
@@ -348,7 +353,15 @@
             line-height: 1.45;
         }
 
-        .course-table tbody td.col-shrm {
+        .course-table tbody td.col-hrci-type {
+            text-align: center;
+            font-weight: 500;
+            color: var(--clr-text-muted);
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .course-table tbody td.col-hrci {
             text-align: center;
             font-weight: 600;
             color: var(--gold);
@@ -461,7 +474,7 @@
             }
 
             .course-table {
-                min-width: 520px;
+                min-width: 600px;
             }
 
             .course-table thead th,
@@ -479,8 +492,12 @@
                 width: 65px;
             }
 
-            .col-shrm {
-                width: 80px;
+            .col-hrci-type {
+                width: 120px;
+            }
+
+            .col-hrci {
+                width: 75px;
             }
         }
     </style>
@@ -523,7 +540,8 @@
                             <tr>
                                 <th class="col-sl">SL NO</th>
                                 <th class="col-title">COURSE TITLE</th>
-                                <th class="col-shrm">SHRM</th>
+                                <th class="col-hrci-type">HRCI TYPE</th>
+                                <th class="col-hrci">HRCI</th>
                             </tr>
                         </thead>
                         <tbody id="courseTableBody">
@@ -541,6 +559,7 @@
 
         </div>
     </main>
+
     <!-- Bootstrap 5.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -551,78 +570,63 @@
    ============================================ */
         const courses = [
             // Certified Professional
-            { title: "Certified Competency Mapping Specialist [CCMS]", shrm: 16, category: "certified" },
-            { title: "Certified HR Analytics Professional", shrm: 20, category: "certified" },
-            { title: "Certified Learning & Development Professional [CLDP]", shrm: 16, category: "certified" },
-            { title: "Certified Associate Human Resource Professional [CAHRP]", shrm: 20, category: "certified" },
-            { title: "Certified Team Performance Specialist [CTPS]", shrm: 14, category: "certified" },
-            { title: "Certified Succession Planning Specialist [CSPS]", shrm: 20, category: "certified" },
-            { title: "Certified PEOPLE Champion", shrm: 20, category: "certified" },
-            { title: "Certified Apparel Compliance Professional [CACP]", shrm: 20, category: "certified" },
-            { title: "Certified HR Business Partner 2.0 [Online]", shrm: 20, category: "certified" },
-            { title: "Certified HR Business Partner 2.0 [Virtual Class based]", shrm: 20, category: "certified" },
-            { title: "Certified Compensation & Benefits Professional [CCBP]", shrm: 20, category: "certified" },
-            { title: "Certified Human Resource Professional [CHRP]", shrm: 16, category: "certified" },
-            { title: "Certified Key Performance Indicator Specialist [CKPIS]", shrm: 16, category: "certified" },
-            { title: "Certified HR Generalist [CHRG]", shrm: 20, category: "certified" },
-            { title: "Certified Recruitment & Selection Specialist [CRSS]", shrm: 16, category: "certified" },
-            { title: "Certified Performance Management Professional [CPMP]", shrm: 16, category: "certified" },
-            { title: "Certified Organization Development Professional [CODP]", shrm: 16, category: "certified" },
-            { title: "Certified Human Resource Associate", shrm: 16, category: "certified" },
-            { title: "Certified Psychometric Assessment Specialist [CPAS]", shrm: 16, category: "certified" },
-            { title: "Certified Fellow Human Resource Professional [cFHRP]", shrm: 16, category: "certified" },
-            { title: "Certified HR Compliance Professional [CHRCP]", shrm: 16, category: "certified" },
-            { title: "Certified Lean Office Specialist [CLOS]", shrm: 16, category: "certified" },
-            { title: "Certified Business Process Reengineering Specialist [CBPRS]", shrm: 16, category: "certified" },
-            { title: "Certified Competitor Analysis Specialist", shrm: 16, category: "certified" },
-            { title: "Certified Customer Service Specialist [CCSS]", shrm: 16, category: "certified" },
-            { title: "Certified HR Communication Specialist [CHRCS]", shrm: 16, category: "certified" },
-            { title: "Certified Assessment Centre Specialist [CACS]", shrm: 16, category: "certified" },
-            { title: "Certified Emotional Intelligence Specialist [CEIS]", shrm: 16, category: "certified" },
-            { title: "Certified Interviewing & Hiring Specialist [CIHS]", shrm: 16, category: "certified" },
-            { title: "Certified Employee Engagement Specialist", shrm: 16, category: "certified" },
-            { title: "Certified Compensation & Reward Professional [CCRP]", shrm: 16, category: "certified" },
+            { title: "Certified Competency Mapping Specialist [CCMS]", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified HR Analytics Professional", hrci: 20, hrciType: "Business", category: "certified" },
+            { title: "Certified Learning & Development Professional [CLDP]", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Associate Human Resource Professional [CAHRP]", hrci: 20, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Team Performance Specialist [CTPS]", hrci: 14, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Succession Planning Specialist [CSPS]", hrci: 9, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified PEOPLE Champion", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Apparel Compliance Professional [CACP]", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified HR Business Partner 2.0 [Online]", hrci: 45, hrciType: "Business", category: "certified" },
+            { title: "Certified HR Business Partner 2.0 [Virtual Class based]", hrci: 15, hrciType: "Business", category: "certified" },
+            { title: "Certified Compensation & Benefits Professional [CCBP]", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Human Resource Professional [CHRP]", hrci: 24, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Key Performance Indicator Specialist [CKPIS]", hrci: 24, hrciType: "Business", category: "certified" },
+            { title: "Certified HR Generalist [CHRG]", hrci: 24, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Recruitment & Selection Specialist [CRSS]", hrci: 16, hrciType: "Talent", category: "certified" },
+            { title: "Certified Performance Management Professional [CPMP]", hrci: 22, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Organization Development Professional [CODP]", hrci: 16, hrciType: "Business", category: "certified" },
+            { title: "Certified Human Resource Associate", hrci: 15.75, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Psychometric Assessment Specialist [CPAS]", hrci: 16, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified Fellow Human Resource Professional [cFHRP]", hrci: 15, hrciType: "HR (General)", category: "certified" },
+            { title: "Certified HR Compliance Professional [CHRCP]", hrci: 20, hrciType: "HR (General)", category: "certified" },
+
 
             // Diploma Program
-            { title: "Post Graduate Diploma in Human Resource Management", shrm: 40, category: "diploma" },
-            { title: "Post Graduate Diploma in Leadership & People Management [PGDLPM]", shrm: 36, category: "diploma" },
-            { title: "Post Graduate Diploma in Business Communication & Managerial Competency [PGDBCMC]", shrm: 32, category: "diploma" },
-            { title: "Post Graduate Diploma in Occupational Safety & Health (PGDOSH)", shrm: 40, category: "diploma" },
-            { title: "Post Graduate Diploma in Business Management [PGDBM]", shrm: 36, category: "diploma" },
-            { title: "Diploma in Human Resource Management [DHRM]", shrm: 36, category: "diploma" },
+            { title: "Post Graduate Diploma in Human Resource Management", hrci: 72, hrciType: "HR (General)", category: "diploma" },
+            { title: "Post Graduate Diploma in Leadership & People Management [PGDLPM]", hrci: 50, hrciType: "HR (General)", category: "diploma" },
+            { title: "Post Graduate Diploma in Business Communication & Managerial Competency [PGDBCMC]", hrci: 50, hrciType: "HR (General)", category: "diploma" },
+            { title: "Post Graduate Diploma in Occupational Safety & Health (PGDOSH)", hrci: 50, hrciType: "HR (General)", category: "diploma" },
+            { title: "Post Graduate Diploma in Business Management [PGDBM]", hrci: 72, hrciType: "Business", category: "diploma" },
+            { title: "Diploma in Human Resource Management [DHRM]", hrci: 48, hrciType: "HR (General)", category: "diploma" },
 
             // Professional Course
-            { title: "Professional Certificate in Managerial Excellence [PcMEx]", shrm: 8, category: "Professional" },
-            { title: "Professional Certificate in Strategic HR Management [PcSHRM]", shrm: 6, category: "Professional" },
-            { title: "Professional Certificate in Leadership Excellence [PcLE]", shrm: 4, category: "Professional" },
-            { title: "Professional Certificate in HR Operations [PcHRO]", shrm: 6, category: "Professional" },
-            { title: "Professional Certificate in Compensation & Benefit Management [PcCBM]", shrm: 4, category: "Professional" },
-            { title: "Professional Certificate in Health, Safety & Environment [PcHSE]", shrm: 4, category: "Professional" },
-            { title: "Professional Certificate in Training Need & Impact Assessment [PcTNAIA]", shrm: 4, category: "Professional" },
-            { title: "Professional Certificate in Organization Development [PcOD]", shrm: 4, category: "Professional" },
-            { title: "Talent Management Master Class [TMMC]", shrm: 4, category: "Professional" },
-            { title: "Post Graduate Certificate in Human Resource Management (PGCHRM)", shrm: 4, category: "Professional" },
+            { title: "Professional Certificate in Managerial Excellence [PcMEx]", hrci: 20, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in Strategic HR Management [PcSHRM]", hrci: 20, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in Leadership Excellence [PcLE]", hrci: 12, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in HR Operations [PcHRO]", hrci: 20, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in Compensation & Benefit Management [PcCBM]", hrci: 16, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in Health, Safety & Environment [PcHSE]", hrci: 16, hrciType: "HR (General)", category: "Professional" },
+            { title: "Professional Certificate in Training Need & Impact Assessment [PcTNAIA]", hrci: 16, hrciType: "HR (General)", category: "Professional" },
+            { title: "Talent Management Master Class [TMMC]", hrci: 20, hrciType: "HR (General)", category: "Professional" },
 
             // Workshop Course
-            { title: "HR Audit: Preparation & Conduction", shrm: 3, category: "Workshop" },
-            { title: "TNA: Process, Tools and Technique", shrm: 3, category: "Workshop" },
-            { title: "ROI of Training", shrm: 3, category: "Workshop" },
-            { title: "HR Accounting: Concept of Human Capital Management", shrm: 6, category: "Workshop" },
-            { title: "KPI based Performance Management System", shrm: 6, category: "Workshop" },
-            { title: "Coaching Skills for Managers", shrm: 3, category: "Workshop" },
-            { title: "Competency Mapping: Tools & Techniques", shrm: 3, category: "Workshop" },
-            { title: "Facilitation: Concept & Competencies", shrm: 3, category: "Workshop" },
-            { title: "HR Planning: Scientific and Mathematical Calculation", shrm: 4, category: "Workshop" },
-            { title: "Methods for KPI Designing", shrm: 3, category: "Workshop" },
-            { title: "Methods of Recruitment & Selection", shrm: 3, category: "Workshop" },
-            { title: "Job Analysis: Methods & Tools", shrm: 3, category: "Workshop" },
-            { title: "Business Intelligence for Managers", shrm: 3, category: "Workshop" },
-            { title: "Employee Turnover Cost: Calculation & Reduction", shrm: 3, category: "Workshop" },
-            { title: "Design, Implement & Measure KPI", shrm: 4, category: "Workshop" },
-            { title: "Learning & Development Essentials", shrm: 3, category: "Workshop" },
-            { title: "Learning & Development as Business Partner", shrm: 3, category: "Workshop" },
-            { title: "Employee Separation & Final Settlement: Process & Calculation", shrm: 3, category: "Workshop" },
-            { title: "Emotional Intelligence at Work: KEY to Success", shrm: 4, category: "Workshop" },
+            { title: "HR Audit: Preparation & Conduction", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "TNA: Process, Tools and Technique", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "ROI of Training", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Coaching Skills for Managers", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Competency Mapping: Tools & Techniques", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Facilitation: Concept & Competencies", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "HR Planning: Scientific and Mathematical Calculation", hrci: 4, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Methods for KPI Designing", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Methods of Recruitment & Selection", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Job Analysis: Methods & Tools", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Employee Turnover Cost: Calculation & Reduction", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Learning & Development Essentials", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Learning & Development as Business Partner", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Employee Separation & Final Settlement: Process & Calculation", hrci: 3, hrciType: "HR (General)", category: "Workshop" },
+            { title: "Emotional Intelligence at Work: KEY to Success", hrci: 4, hrciType: "HR (General)", category: "Workshop" },
         ];
 
         /* ============================================
@@ -662,7 +666,8 @@
                 tr.innerHTML = `
             <td class="col-sl">${index + 1}</td>
             <td class="col-title">${course.title}</td>
-            <td class="col-shrm">${course.shrm}</td>
+            <td class="col-hrci-type">${course.hrciType}</td>
+            <td class="col-hrci">${course.hrci}</td>
         `;
 
                 tableBody.appendChild(tr);
