@@ -2441,7 +2441,7 @@
 
 
 
- 
+
  .glass-card:hover {
      transform: translateY(-4px) !important;
  }
@@ -2790,16 +2790,7 @@
      max-width: 960px;
  }
 
- /* ============================================
-   FILTER CARD
-   ============================================ */
- .filter-card {
-     background: var(--white);
-     border-radius: var(--radius-card);
-     box-shadow: var(--shadow-card);
-     padding: 28px 32px 24px;
-     margin-bottom: 20px;
- }
+
 
  .filter-label-wrap {
      margin-bottom: 14px;
@@ -2846,16 +2837,6 @@
      transition: var(--transition-base);
  }
 
- .custom-select.form-select:focus {
-     border-color: var(--border-gold-hover);
-     outline-color: var(--border-gold-hover);
-     box-shadow: var(--shadow-input-focus);
- }
-
- .custom-select.form-select:hover {
-     border-color: var(--border-gold-hover);
-     outline-color: var(--border-gold-hover);
- }
 
  .custom-select.form-select option {
      font-family: var(--font-body);
@@ -3155,3 +3136,349 @@
  }
 
  /* HRCI end */
+
+
+
+
+ /* shrm start */
+
+
+
+ 
+
+
+
+ /* ============================================
+   FILTER CARD
+   ============================================ */
+ .filter-card {
+     background: var(--white);
+     border-radius: var(--radius-card);
+     box-shadow: var(--shadow-card);
+     padding: 28px 32px 24px;
+     margin-bottom: 20px;
+ }
+
+ .filter-label-wrap {
+     margin-bottom: 14px;
+ }
+
+ .filter-icon {
+     font-size: 15px;
+     color: var(--gold);
+     line-height: 1;
+ }
+
+ .filter-label {
+     font-family: var(--font-heading);
+     font-size: 13px;
+     font-weight: 600;
+     color: var(--text-primary);
+     letter-spacing: 0.6px;
+     text-transform: uppercase;
+ }
+
+ /* ============================================
+   CUSTOM SELECT — Premium Dropdown
+   ============================================ */
+ .select-wrapper {
+     position: relative;
+ }
+
+ .custom-select.form-select {
+     height: 64px;
+     padding: 0 48px 0 20px;
+     font-family: var(--font-body);
+     font-size: 15px;
+     font-weight: 500;
+     color: var(--text-primary);
+     line-height: 1;
+     background-color: var(--white);
+     background-image: none;
+     border: 1.5px solid var(--border-gold);
+     outline: 1.5px solid var(--border-gold);
+     outline-offset: 3px;
+     border-radius: var(--radius-md);
+     box-shadow: var(--shadow-soft);
+     cursor: pointer;
+     transition: var(--transition-base);
+ }
+
+ .custom-select.form-select:focus {
+     border-color: var(--border-gold-hover);
+     outline-color: var(--border-gold-hover);
+     box-shadow: var(--shadow-input-focus);
+ }
+
+ .custom-select.form-select:hover {
+     border-color: var(--border-gold-hover);
+     outline-color: var(--border-gold-hover);
+ }
+
+
+
+ .select-arrow {
+     position: absolute;
+     right: 18px;
+     top: 50%;
+     transform: translateY(-50%);
+     font-size: 16px;
+     color: var(--gold);
+     pointer-events: none;
+     transition: var(--transition-fast);
+ }
+
+ .select-wrapper:hover .select-arrow {
+     color: var(--gold-light);
+ }
+
+ /* ============================================
+   COURSE COUNT
+   ============================================ */
+ .course-count {
+     margin: 14px 0 0;
+     font-family: var(--font-body);
+     font-size: 13.5px;
+     font-weight: 400;
+     color: var(--text-secondary);
+     line-height: 1;
+ }
+
+ .count-number {
+     color: var(--gold);
+     font-weight: 600;
+ }
+
+
+
+ /* Custom scrollbar for Bootstrap table-responsive */
+ .table-responsive::-webkit-scrollbar {
+     height: 6px;
+ }
+
+ .table-responsive::-webkit-scrollbar-track {
+     background: var(--clr-beige);
+     border-radius: 3px;
+ }
+
+ .table-responsive::-webkit-scrollbar-thumb {
+     background: var(--gold-pale);
+     border-radius: 3px;
+ }
+
+ /* ============================================
+   TABLE STYLES
+   ============================================ */
+ .course-table {
+     width: 100%;
+     table-layout: fixed;
+ }
+
+ .col-sl {
+     width: 80px;
+ }
+
+ .col-shrm {
+     width: 100px;
+ }
+
+ /* ---- Header ---- */
+ .course-table thead tr {
+     background-color: var(--clr-beige);
+ }
+
+ .course-table thead th {
+     padding: 16px 20px;
+     font-family: var(--font-heading);
+     font-size: 11.5px;
+     font-weight: 600;
+     color: var(--text-primary);
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+     border-bottom: 1.5px solid var(--clr-border);
+     vertical-align: middle;
+ }
+
+ .course-table thead th.col-sl,
+ .course-table thead th.col-shrm {
+     text-align: center;
+ }
+
+ .course-table thead th.col-title {
+     text-align: left;
+ }
+
+ /* ---- Body Rows ---- */
+ .course-table tbody tr {
+     transition: background-color var(--transition-base), transform var(--transition-fast);
+ }
+
+ .course-table tbody tr:not(:last-child) td {
+     border-bottom: 1px solid var(--clr-border-light);
+ }
+
+ .course-table tbody tr:hover {
+     background-color: var(--clr-primary-bg);
+ }
+
+ .course-table tbody td {
+     padding: 15px 20px;
+     font-family: var(--font-body);
+     font-size: 14px;
+     font-weight: 400;
+     color: var(--text-primary);
+     vertical-align: middle;
+     border: none;
+ }
+
+ .course-table tbody td.col-sl {
+     text-align: center;
+     color: var(--clr-text-muted);
+     font-weight: 500;
+     font-size: 13.5px;
+ }
+
+ .course-table tbody td.col-title {
+     text-align: left;
+     font-weight: 500;
+     color: var(--clr-text);
+     line-height: 1.45;
+ }
+
+ .course-table tbody td.col-shrm {
+     text-align: center;
+     font-weight: 600;
+     color: var(--gold);
+     font-size: 14px;
+ }
+
+ /* ============================================
+   ROW FADE-IN ANIMATION
+   ============================================ */
+ @keyframes rowFadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(6px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .course-table tbody tr.row-animate {
+     animation: rowFadeIn 0.35s var(--ease-smooth) forwards;
+     opacity: 0;
+ }
+
+ /* ============================================
+   EMPTY STATE
+   ============================================ */
+ .empty-state {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 60px 20px;
+     text-align: center;
+ }
+
+ .empty-icon {
+     font-size: 48px;
+     color: var(--text-muted);
+     margin-bottom: 14px;
+ }
+
+ .empty-text {
+     font-family: var(--font-body);
+     font-size: 15px;
+     font-weight: 500;
+     color: var(--text-secondary);
+ }
+
+ /* ============================================
+   RESPONSIVE: TABLET
+   ============================================ */
+ @media (max-width: 991.98px) {
+     .course-listing-page {
+         padding: 32px 0 48px;
+     }
+
+     .filter-card {
+         padding: 24px 24px 20px;
+     }
+
+     .course-table thead th,
+     .course-table tbody td {
+         padding: 14px 16px;
+     }
+ }
+
+ /* ============================================
+   RESPONSIVE: MOBILE
+   ============================================ */
+ @media (max-width: 575.98px) {
+     .course-listing-page {
+         padding: 20px 0 36px;
+     }
+
+     .filter-card {
+         padding: 20px 18px 18px;
+         border-radius: var(--radius-lg);
+     }
+
+     .filter-label-wrap {
+         margin-bottom: 12px;
+     }
+
+     .filter-label {
+         font-size: 12px;
+     }
+
+     .custom-select.form-select {
+         height: 56px;
+         font-size: 14px;
+         padding-left: 16px;
+         padding-right: 42px;
+     }
+
+     .select-arrow {
+         right: 14px;
+         font-size: 14px;
+     }
+
+     .course-count {
+         margin-top: 12px;
+         font-size: 13px;
+     }
+
+     .table-card {
+         border-radius: var(--radius-lg);
+     }
+
+     .course-table {
+         min-width: 520px;
+     }
+
+     .course-table thead th,
+     .course-table tbody td {
+         padding: 13px 14px;
+         font-size: 13px;
+     }
+
+     .course-table thead th {
+         font-size: 10.5px;
+         letter-spacing: 1px;
+     }
+
+     .col-sl {
+         width: 65px;
+     }
+
+     .col-shrm {
+         width: 80px;
+     }
+ }
+
+ /* shrm end */
