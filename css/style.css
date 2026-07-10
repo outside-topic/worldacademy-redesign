@@ -3335,10 +3335,1252 @@
 
      }
  }
+
  /* aaa end */
 
-.txtimg{
-    padding: 25px 25px 25px;
-    background: var(--white);
-    border-radius: 30px;
-}
+ .txtimg {
+     padding: 25px 25px 25px;
+     background: var(--white);
+     border-radius: 30px;
+ }
+
+
+
+ .z7k001-section {
+     padding: 80px 0;
+ }
+
+ .z7k002-header {
+     text-align: center;
+     margin-bottom: 56px;
+ }
+
+
+
+ .z7k003-grid {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 20px;
+     align-items: stretch;
+ }
+
+ .z7k004-card {
+     background: var(--clr-white);
+     border: 1px solid var(--clr-border);
+     border-radius: var(--radius-card);
+     padding: 28px 24px;
+     box-shadow: var(--shadow-card);
+     transition: transform var(--transition-base) var(--ease-smooth),
+         border-color var(--transition-base) var(--ease-smooth),
+         box-shadow var(--transition-base) var(--ease-smooth);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     height: 100%;
+     min-height: 280px;
+     transition: all ease 0.3s;
+ }
+
+ .z7k004-card:hover {
+     transform: translateY(-5px);
+     border-color: var(--border-gold-hover);
+     box-shadow: var(--shadow-card-hover);
+ }
+
+ .z7k007-icon {
+     width: 44px;
+     height: 44px;
+     border-radius: var(--radius-md);
+     background: var(--clr-primary-bg);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+     transition: background var(--transition-base) var(--ease-smooth);
+ }
+
+ .z7k007-icon i {
+     font-size: 1.25rem;
+     color: var(--gold);
+     line-height: 1;
+ }
+
+ .z7k004-card:hover .z7k007-icon {
+     background: var(--clr-primary-bg-hover);
+ }
+
+ .z7k005-code {
+     font-family: var(--font-heading);
+     font-size: 0.8125rem;
+     font-weight: 700;
+     color: var(--gold);
+     letter-spacing: 0.01em;
+     margin-bottom: 20px;
+     padding-bottom: 20px;
+     border-bottom: 1px solid var(--clr-border-light);
+     line-height: 1.35;
+ }
+
+ .z7k006-label {
+     font-family: var(--font-body);
+     font-size: 0.875rem;
+     font-weight: 500;
+     color: var(--clr-text-muted);
+     line-height: 1.55;
+     margin: 0;
+     flex-grow: 1;
+ }
+
+ @media (max-width: 1199.98px) {
+     .z7k003-grid {
+         grid-template-columns: repeat(6, 1fr);
+     }
+
+     .z7k004-card {
+         grid-column: span 2;
+     }
+
+     .z7k004-card:nth-child(4) {
+         grid-column: 2 / 4;
+     }
+
+     .z7k004-card:nth-child(5) {
+         grid-column: 4 / 6;
+     }
+ }
+
+ @media (max-width: 991.98px) {
+     .z7k001-section {
+         padding: 64px 0;
+     }
+
+     .z7k003-grid {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 18px;
+     }
+
+     .z7k004-card {
+         grid-column: span 1;
+         padding: 28px 24px;
+         min-height: 240px;
+     }
+ }
+
+ @media (max-width: 575.98px) {
+     .z7k001-section {
+         padding: 48px 0;
+     }
+
+     .z7k002-header {
+         margin-bottom: 36px;
+     }
+
+     .z7k002-header h1 {
+         font-size: 1.5rem;
+     }
+
+     .z7k003-grid {
+         grid-template-columns: 1fr;
+         gap: 16px;
+     }
+
+     .z7k004-card {
+         padding: 24px;
+         min-height: auto;
+     }
+ }
+
+
+
+
+
+
+
+ /* ===== Sector (Section) ===== */
+ .xnq-sector {
+     padding: 120px 0;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .xnq-sector::before {
+     content: '';
+     position: absolute;
+     top: -200px;
+     right: -100px;
+     width: 520px;
+     height: 520px;
+     border-radius: 50%;
+     background: radial-gradient(circle, var(--gold-faint) 0%, transparent 70%);
+     opacity: 0.5;
+     pointer-events: none;
+ }
+
+ .xnq-sector::after {
+     content: '';
+     position: absolute;
+     bottom: -150px;
+     left: -80px;
+     width: 420px;
+     height: 420px;
+     border-radius: 50%;
+     background: radial-gradient(circle, var(--gold-faint) 0%, transparent 70%);
+     opacity: 0.4;
+     pointer-events: none;
+ }
+ /* ===== Lattice (Grid) ===== */
+ .xnq-lattice {
+     display: grid;
+     gap: 36px;
+     grid-template-areas:
+         "o1"
+         "p1"
+         "o2"
+         "p2"
+         "o3"
+         "p3"
+         "o4"
+         "p4"
+         "o5"
+         "p5";
+     position: relative;
+     z-index: 1;
+ }
+
+ @media (min-width: 431px) {
+     .xnq-lattice {
+         gap: 36px;
+     }
+ }
+
+ @media (min-width: 576px) {
+     .xnq-lattice {
+         grid-template-columns: 1fr 1fr;
+         grid-template-areas:
+             "p1 o1"
+             "o2 p2"
+             "p3 o3"
+             "o4 p4"
+             "p5 o5";
+         gap: 40px;
+     }
+ }
+
+ @media (min-width: 992px) {
+     .xnq-lattice {
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-areas:
+             "p1 p1 o1"
+             "o2 p2 p2"
+             "p3 p3 o3"
+             "o4 p4 p4"
+             "p5 p5 o5";
+         gap: 48px;
+     }
+ }
+
+ .xnq-ornament-i {
+     grid-area: o1;
+ }
+
+ .xnq-parchment-i {
+     grid-area: p1;
+ }
+
+ .xnq-ornament-ii {
+     grid-area: o2;
+ }
+
+ .xnq-parchment-ii {
+     grid-area: p2;
+ }
+
+ .xnq-ornament-iii {
+     grid-area: o3;
+ }
+
+ .xnq-parchment-iii {
+     grid-area: p3;
+ }
+
+ .xnq-ornament-iv {
+     grid-area: o4;
+ }
+
+ .xnq-parchment-iv {
+     grid-area: p4;
+ }
+
+ .xnq-ornament-v {
+     grid-area: o5;
+ }
+
+ .xnq-parchment-v {
+     grid-area: p5;
+ }
+
+ /* ===== Parchment (Card) ===== */
+ .xnq-parchment-i,
+ .xnq-parchment-ii,
+ .xnq-parchment-iii,
+ .xnq-parchment-iv,
+ .xnq-parchment-v {
+     background: var(--white);
+     border-radius: 24px;
+     border: 1px solid var(--gold-faint);
+     box-shadow:
+         0 4px 24px rgba(113, 96, 39, 0.06),
+         0 1px 4px rgba(113, 96, 39, 0.03);
+     padding: 48px;
+     position: relative;
+     overflow: hidden;
+     transition:
+         transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+         box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+         border-color 0.45s ease;
+ }
+
+ .xnq-parchment-i::before,
+ .xnq-parchment-ii::before,
+ .xnq-parchment-iii::before,
+ .xnq-parchment-iv::before,
+ .xnq-parchment-v::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 48px;
+     right: 48px;
+     height: 3px;
+     background: linear-gradient(90deg,
+             transparent,
+             var(--gold-pale),
+             var(--gold-primary),
+             var(--gold-pale),
+             transparent);
+     border-radius: 0 0 2px 2px;
+     opacity: 0;
+     transition: opacity 0.45s ease;
+ }
+
+ .xnq-parchment-i:hover,
+ .xnq-parchment-ii:hover,
+ .xnq-parchment-iii:hover,
+ .xnq-parchment-iv:hover,
+ .xnq-parchment-v:hover {
+     transform: translateY(-8px);
+     box-shadow:
+         0 20px 56px rgba(113, 96, 39, 0.12),
+         0 4px 16px rgba(113, 96, 39, 0.06);
+     border-color: var(--gold-pale);
+ }
+
+ .xnq-parchment-i:hover::before,
+ .xnq-parchment-ii:hover::before,
+ .xnq-parchment-iii:hover::before,
+ .xnq-parchment-iv:hover::before,
+ .xnq-parchment-v:hover::before {
+     opacity: 1;
+ }
+
+ .xnq-tally {
+     font-size: 80px;
+     font-weight: 800;
+     color: var(--gold-faint);
+     line-height: 1;
+     margin-bottom: 12px;
+     transition: color 0.45s ease;
+     user-select: none;
+ }
+
+ .xnq-parchment-i:hover .xnq-tally,
+ .xnq-parchment-ii:hover .xnq-tally,
+ .xnq-parchment-iii:hover .xnq-tally,
+ .xnq-parchment-iv:hover .xnq-tally,
+ .xnq-parchment-v:hover .xnq-tally {
+     color: var(--gold-pale);
+ }
+
+ .xnq-monogram {
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 3px;
+     text-transform: uppercase;
+     color: var(--gold-primary);
+     margin-bottom: 16px;
+     display: inline-block;
+ }
+
+ .xnq-declaration {
+     font-size: 26px;
+     font-weight: 700;
+     color: var(--text);
+     line-height: 1.3;
+     margin-bottom: 16px;
+     letter-spacing: -0.2px;
+ }
+
+ .xnq-manuscript {
+     font-size: 16px;
+     color: var(--text);
+     opacity: 0.58;
+     line-height: 1.8;
+     margin-bottom: 28px;
+ }
+
+ .xnq-traverse {
+     font-size: 14px;
+     font-weight: 600;
+     color: var(--gold-primary);
+     text-decoration: none;
+     letter-spacing: 0.5px;
+     display: inline-flex;
+     align-items: center;
+     gap: 12px;
+     transition: color 0.3s ease;
+ }
+
+ .xnq-traverse:hover {
+     color: var(--gold-dark);
+ }
+
+ .xnq-vector {
+     display: inline-block;
+     width: 28px;
+     height: 2px;
+     background: currentColor;
+     position: relative;
+     transition: width 0.35s ease;
+     flex-shrink: 0;
+ }
+
+ .xnq-vector::after {
+     content: '';
+     position: absolute;
+     right: -1px;
+     top: -3.5px;
+     width: 8px;
+     height: 8px;
+     border-right: 2px solid currentColor;
+     border-top: 2px solid currentColor;
+     transform: rotate(45deg);
+ }
+
+ .xnq-traverse:hover .xnq-vector {
+     width: 40px;
+ }
+
+ /* ===== Ornament Base ===== */
+ .xnq-ornament-i,
+ .xnq-ornament-ii,
+ .xnq-ornament-iii,
+ .xnq-ornament-iv,
+ .xnq-ornament-v {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     min-height: 240px;
+ }
+
+ /* ================================================
+           ORNAMENT I — Auricle (Rotating Concentric Rings)
+           ================================================ */
+ .xnq-auricle-chamber {
+     position: relative;
+     width: 180px;
+     height: 180px;
+ }
+
+ .xnq-auricle-band {
+     position: absolute;
+     border-radius: 50%;
+     top: 50%;
+     left: 50%;
+ }
+
+ .xnq-auricle-band--outer {
+     width: 180px;
+     height: 180px;
+     margin-top: -90px;
+     margin-left: -90px;
+     border: 2px dashed var(--gold-pale);
+     animation: xnq-revolve-forward 20s linear infinite;
+ }
+
+ .xnq-auricle-band--mid {
+     width: 128px;
+     height: 128px;
+     margin-top: -64px;
+     margin-left: -64px;
+     border: 2px dashed var(--gold-lighter);
+     animation: xnq-revolve-retrograde 15s linear infinite;
+ }
+
+ .xnq-auricle-band--inner {
+     width: 76px;
+     height: 76px;
+     margin-top: -38px;
+     margin-left: -38px;
+     border: 2px solid var(--gold-primary);
+     animation: xnq-revolve-forward 10s linear infinite;
+ }
+
+ .xnq-auricle-nucleus {
+     width: 14px;
+     height: 14px;
+     margin-top: -7px;
+     margin-left: -7px;
+     background: var(--gold-primary);
+     border-radius: 50%;
+     animation: xnq-throb 2.5s ease-in-out infinite;
+ }
+
+ /* ================================================
+           ORNAMENT II — Levitate (Floating Orbs)
+           ================================================ */
+ .xnq-levitate-basin {
+     position: relative;
+     width: 180px;
+     height: 200px;
+ }
+
+ .xnq-levitate-particle {
+     position: absolute;
+     border-radius: 50%;
+ }
+
+ .xnq-levitate-particle--alpha {
+     width: 54px;
+     height: 54px;
+     background: linear-gradient(135deg, var(--gold-lighter), var(--gold-pale));
+     left: 18px;
+     top: 28px;
+     animation: xnq-bob 4s ease-in-out infinite;
+ }
+
+ .xnq-levitate-particle--beta {
+     width: 34px;
+     height: 34px;
+     border: 2px solid var(--gold-lighter);
+     background: transparent;
+     right: 22px;
+     top: 12px;
+     animation: xnq-bob 3.5s ease-in-out infinite 0.5s;
+ }
+
+ .xnq-levitate-particle--gamma {
+     width: 20px;
+     height: 20px;
+     background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+     left: 78px;
+     top: 88px;
+     animation: xnq-bob 5s ease-in-out infinite 1s;
+ }
+
+ .xnq-levitate-particle--delta {
+     width: 42px;
+     height: 42px;
+     border: 2px solid var(--gold-pale);
+     background: transparent;
+     left: 8px;
+     bottom: 28px;
+     animation: xnq-bob 4.5s ease-in-out infinite 1.5s;
+ }
+
+ .xnq-levitate-particle--epsilon {
+     width: 14px;
+     height: 14px;
+     background: var(--gold-lighter);
+     right: 38px;
+     bottom: 48px;
+     animation: xnq-bob 3s ease-in-out infinite 0.8s;
+ }
+
+ .xnq-levitate-particle--zeta {
+     width: 28px;
+     height: 28px;
+     border: 2px solid var(--gold-light);
+     background: transparent;
+     right: 12px;
+     bottom: 8px;
+     animation: xnq-bob 3.8s ease-in-out infinite 1.2s;
+ }
+
+ /* ================================================
+           ORNAMENT III — Radial (Geometric Line Network)
+           ================================================ */
+ .xnq-radial-compass {
+     position: relative;
+     width: 180px;
+     height: 180px;
+     animation: xnq-drift 35s linear infinite;
+ }
+
+ .xnq-radial-ray {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     height: 1.5px;
+     transform-origin: left center;
+ }
+
+ .xnq-radial-ray::after {
+     content: '';
+     position: absolute;
+     right: -3.5px;
+     top: -3.5px;
+     width: 7px;
+     height: 7px;
+     border-radius: 50%;
+     background: var(--gold-lighter);
+ }
+
+ .xnq-radial-ray--a {
+     width: 72px;
+     transform: rotate(0deg);
+     background: var(--gold-pale);
+ }
+
+ .xnq-radial-ray--b {
+     width: 92px;
+     transform: rotate(45deg);
+     background: var(--gold-lighter);
+ }
+
+ .xnq-radial-ray--c {
+     width: 62px;
+     transform: rotate(90deg);
+     background: var(--gold-pale);
+ }
+
+ .xnq-radial-ray--d {
+     width: 82px;
+     transform: rotate(135deg);
+     background: var(--gold-lighter);
+ }
+
+ .xnq-radial-ray--e {
+     width: 72px;
+     transform: rotate(180deg);
+     background: var(--gold-pale);
+ }
+
+ .xnq-radial-ray--f {
+     width: 88px;
+     transform: rotate(225deg);
+     background: var(--gold-lighter);
+ }
+
+ .xnq-radial-ray--g {
+     width: 66px;
+     transform: rotate(270deg);
+     background: var(--gold-pale);
+ }
+
+ .xnq-radial-ray--h {
+     width: 78px;
+     transform: rotate(315deg);
+     background: var(--gold-lighter);
+ }
+
+ .xnq-radial-pivot {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 10px;
+     height: 10px;
+     margin-top: -5px;
+     margin-left: -5px;
+     border-radius: 50%;
+     background: var(--gold-primary);
+     animation: xnq-throb 3s ease-in-out infinite;
+ }
+
+ /* ================================================
+           ORNAMENT IV — Amoeba (Morphing Gradient Blobs)
+           ================================================ */
+ .xnq-amoeba-realm {
+     position: relative;
+     width: 200px;
+     height: 200px;
+ }
+
+ .xnq-amoeba-core {
+     position: absolute;
+     width: 140px;
+     height: 140px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: linear-gradient(135deg, var(--gold-lighter), var(--gold-pale), var(--gold-light));
+     opacity: 0.65;
+     animation: xnq-transmute 8s ease-in-out infinite;
+ }
+
+ .xnq-amoeba-satellite {
+     position: absolute;
+     width: 68px;
+     height: 68px;
+     top: 22%;
+     right: 12%;
+     background: linear-gradient(135deg, var(--gold-primary), var(--gold-lighter));
+     opacity: 0.45;
+     animation: xnq-transmute 6s ease-in-out infinite 2s;
+ }
+
+ .xnq-amoeba-speck {
+     position: absolute;
+     width: 18px;
+     height: 18px;
+     bottom: 24%;
+     left: 18%;
+     background: var(--gold-primary);
+     opacity: 0.55;
+     border-radius: 50%;
+     animation: xnq-throb 2.2s ease-in-out infinite;
+ }
+
+ .xnq-amoeba-halo {
+     position: absolute;
+     width: 100px;
+     height: 100px;
+     bottom: 10%;
+     right: 8%;
+     border-radius: 50%;
+     border: 1.5px solid var(--gold-pale);
+     opacity: 0.4;
+     animation: xnq-breathe 4s ease-in-out infinite;
+ }
+
+ /* ================================================
+           ORNAMENT V — Sigil (Accreditation Seal)
+           ================================================ */
+ .xnq-sigil-foundry {
+     position: relative;
+     width: 180px;
+     height: 180px;
+ }
+
+ .xnq-sigil-orbit {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 170px;
+     height: 170px;
+     margin-top: -85px;
+     margin-left: -85px;
+     border-radius: 50%;
+     border: 2px dashed var(--gold-light);
+     animation: xnq-revolve-forward 25s linear infinite;
+ }
+
+ .xnq-sigil-boundary {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 134px;
+     height: 134px;
+     margin-top: -67px;
+     margin-left: -67px;
+     border-radius: 50%;
+     border: 3px solid var(--gold-primary);
+ }
+
+ .xnq-sigil-sanctum {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 94px;
+     height: 94px;
+     margin-top: -47px;
+     margin-left: -47px;
+     border-radius: 50%;
+     background: var(--gold-faint);
+ }
+
+ .xnq-sigil-crest {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 34px;
+     height: 34px;
+     margin-top: -17px;
+     margin-left: -17px;
+     background: var(--gold-primary);
+     clip-path: polygon(50% 0%,
+             61% 35%,
+             98% 35%,
+             68% 57%,
+             79% 91%,
+             50% 70%,
+             21% 91%,
+             32% 57%,
+             2% 35%,
+             39% 35%);
+     animation: xnq-revolve-retrograde 20s linear infinite;
+ }
+
+ .xnq-sigil-pip {
+     position: absolute;
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: var(--gold-lighter);
+     top: 50%;
+     left: 50%;
+ }
+
+ .xnq-sigil-pip--i {
+     transform: rotate(0deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--ii {
+     transform: rotate(45deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--iii {
+     transform: rotate(90deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--iv {
+     transform: rotate(135deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--v {
+     transform: rotate(180deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--vi {
+     transform: rotate(225deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--vii {
+     transform: rotate(270deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ .xnq-sigil-pip--viii {
+     transform: rotate(315deg) translateX(76px) translate(-3px, -3px);
+ }
+
+ /* ===== Keyframe Animations ===== */
+ @keyframes xnq-revolve-forward {
+     from {
+         transform: rotate(0deg);
+     }
+
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+ @keyframes xnq-revolve-retrograde {
+     from {
+         transform: rotate(360deg);
+     }
+
+     to {
+         transform: rotate(0deg);
+     }
+ }
+
+ @keyframes xnq-drift {
+     from {
+         transform: rotate(0deg);
+     }
+
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+ @keyframes xnq-throb {
+
+     0%,
+     100% {
+         transform: scale(1);
+         opacity: 1;
+     }
+
+     50% {
+         transform: scale(1.4);
+         opacity: 0.6;
+     }
+ }
+
+ @keyframes xnq-breathe {
+
+     0%,
+     100% {
+         transform: scale(1);
+         opacity: 0.4;
+     }
+
+     50% {
+         transform: scale(1.15);
+         opacity: 0.2;
+     }
+ }
+
+ @keyframes xnq-bob {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-18px);
+     }
+ }
+
+ @keyframes xnq-transmute {
+     0% {
+         border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+     }
+
+     25% {
+         border-radius: 60% 40% 30% 70% / 40% 60% 60% 40%;
+     }
+
+     50% {
+         border-radius: 30% 70% 50% 50% / 50% 40% 60% 50%;
+     }
+
+     75% {
+         border-radius: 50% 50% 40% 60% / 60% 50% 50% 40%;
+     }
+
+     100% {
+         border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+     }
+ }
+
+ /* ===== Responsive: Tablet ===== */
+ @media (max-width: 991.98px) {
+     .xnq-sector {
+         padding: 80px 0;
+     }
+
+
+     
+
+
+     .xnq-manuscript {
+         font-size: 15px;
+         margin-bottom: 24px;
+     }
+
+     .xnq-ornament-i,
+     .xnq-ornament-ii,
+     .xnq-ornament-iii,
+     .xnq-ornament-iv,
+     .xnq-ornament-v {
+         min-height: 200px;
+     }
+ }
+
+ /* ===== Responsive: 430px (iPhone 14 Pro Max etc.) ===== */
+ @media (max-width: 430px) {
+
+     .xnq-parchment-i,
+     .xnq-parchment-ii,
+     .xnq-parchment-iii,
+     .xnq-parchment-iv,
+     .xnq-parchment-v {
+         padding: 24px 20px;
+         border-radius: 20px;
+     }
+
+     .xnq-parchment-i::before,
+     .xnq-parchment-ii::before,
+     .xnq-parchment-iii::before,
+     .xnq-parchment-iv::before,
+     .xnq-parchment-v::before {
+         left: 20px;
+         right: 20px;
+     }
+
+     .xnq-tally {
+         font-size: 48px;
+         margin-bottom: 8px;
+     }
+
+     .xnq-monogram {
+         font-size: 10px;
+         letter-spacing: 2.5px;
+         margin-bottom: 12px;
+     }
+
+     .xnq-declaration {
+         font-size: 20px;
+         line-height: 1.28;
+         margin-bottom: 12px;
+     }
+
+     .xnq-manuscript {
+         font-size: 14px;
+         line-height: 1.72;
+         margin-bottom: 20px;
+         opacity: 0.55;
+     }
+
+     .xnq-traverse {
+         font-size: 13px;
+     }
+
+     .xnq-ornament-i,
+     .xnq-ornament-ii,
+     .xnq-ornament-iii,
+     .xnq-ornament-iv,
+     .xnq-ornament-v {
+         min-height: 170px;
+     }
+
+     .xnq-auricle-chamber {
+         width: 140px;
+         height: 140px;
+     }
+
+     .xnq-auricle-band--outer {
+         width: 140px;
+         height: 140px;
+         margin-top: -70px;
+         margin-left: -70px;
+     }
+
+     .xnq-auricle-band--mid {
+         width: 100px;
+         height: 100px;
+         margin-top: -50px;
+         margin-left: -50px;
+     }
+
+     .xnq-auricle-band--inner {
+         width: 58px;
+         height: 58px;
+         margin-top: -29px;
+         margin-left: -29px;
+     }
+
+     .xnq-levitate-basin {
+         width: 150px;
+         height: 170px;
+     }
+
+     .xnq-levitate-particle--alpha {
+         width: 42px;
+         height: 42px;
+         left: 12px;
+         top: 22px;
+     }
+
+     .xnq-levitate-particle--beta {
+         width: 28px;
+         height: 28px;
+         right: 16px;
+         top: 8px;
+     }
+
+     .xnq-levitate-particle--gamma {
+         width: 16px;
+         height: 16px;
+         left: 64px;
+         top: 72px;
+     }
+
+     .xnq-levitate-particle--delta {
+         width: 34px;
+         height: 34px;
+         left: 6px;
+         bottom: 22px;
+     }
+
+     .xnq-levitate-particle--epsilon {
+         width: 12px;
+         height: 12px;
+         right: 28px;
+         bottom: 38px;
+     }
+
+     .xnq-levitate-particle--zeta {
+         width: 22px;
+         height: 22px;
+         right: 8px;
+         bottom: 6px;
+     }
+
+     .xnq-radial-compass {
+         width: 140px;
+         height: 140px;
+     }
+
+     .xnq-radial-ray--a {
+         width: 56px;
+     }
+
+     .xnq-radial-ray--b {
+         width: 72px;
+     }
+
+     .xnq-radial-ray--c {
+         width: 48px;
+     }
+
+     .xnq-radial-ray--d {
+         width: 64px;
+     }
+
+     .xnq-radial-ray--e {
+         width: 56px;
+     }
+
+     .xnq-radial-ray--f {
+         width: 68px;
+     }
+
+     .xnq-radial-ray--g {
+         width: 52px;
+     }
+
+     .xnq-radial-ray--h {
+         width: 60px;
+     }
+
+     .xnq-amoeba-realm {
+         width: 160px;
+         height: 160px;
+     }
+
+     .xnq-amoeba-core {
+         width: 110px;
+         height: 110px;
+     }
+
+     .xnq-amoeba-satellite {
+         width: 54px;
+         height: 54px;
+     }
+
+     .xnq-amoeba-halo {
+         width: 80px;
+         height: 80px;
+     }
+
+     .xnq-sigil-foundry {
+         width: 140px;
+         height: 140px;
+     }
+
+     .xnq-sigil-orbit {
+         width: 132px;
+         height: 132px;
+         margin-top: -66px;
+         margin-left: -66px;
+     }
+
+     .xnq-sigil-boundary {
+         width: 104px;
+         height: 104px;
+         margin-top: -52px;
+         margin-left: -52px;
+     }
+
+     .xnq-sigil-sanctum {
+         width: 72px;
+         height: 72px;
+         margin-top: -36px;
+         margin-left: -36px;
+     }
+
+     .xnq-sigil-crest {
+         width: 26px;
+         height: 26px;
+         margin-top: -13px;
+         margin-left: -13px;
+     }
+
+     .xnq-sigil-pip--i,
+     .xnq-sigil-pip--ii,
+     .xnq-sigil-pip--iii,
+     .xnq-sigil-pip--iv,
+     .xnq-sigil-pip--v,
+     .xnq-sigil-pip--vi,
+     .xnq-sigil-pip--vii,
+     .xnq-sigil-pip--viii {
+         transform-origin: 0 0;
+     }
+
+     .xnq-sigil-pip--i {
+         transform: rotate(0deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--ii {
+         transform: rotate(45deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--iii {
+         transform: rotate(90deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--iv {
+         transform: rotate(135deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--v {
+         transform: rotate(180deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--vi {
+         transform: rotate(225deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--vii {
+         transform: rotate(270deg) translateX(59px) translate(-3px, -3px);
+     }
+
+     .xnq-sigil-pip--viii {
+         transform: rotate(315deg) translateX(59px) translate(-3px, -3px);
+     }
+ }
+
+ /* ===== Reduced Motion ===== */
+ @media (prefers-reduced-motion: reduce) {
+
+     .xnq-auricle-band--outer,
+     .xnq-auricle-band--mid,
+     .xnq-auricle-band--inner,
+     .xnq-auricle-nucleus,
+     .xnq-levitate-particle--alpha,
+     .xnq-levitate-particle--beta,
+     .xnq-levitate-particle--gamma,
+     .xnq-levitate-particle--delta,
+     .xnq-levitate-particle--epsilon,
+     .xnq-levitate-particle--zeta,
+     .xnq-radial-compass,
+     .xnq-radial-pivot,
+     .xnq-amoeba-core,
+     .xnq-amoeba-satellite,
+     .xnq-amoeba-speck,
+     .xnq-amoeba-halo,
+     .xnq-sigil-orbit,
+     .xnq-sigil-crest {
+         animation: none;
+     }
+
+     .xnq-parchment-i,
+     .xnq-parchment-ii,
+     .xnq-parchment-iii,
+     .xnq-parchment-iv,
+     .xnq-parchment-v {
+         transition: none;
+     }
+
+     .xnq-parchment-i:hover,
+     .xnq-parchment-ii:hover,
+     .xnq-parchment-iii:hover,
+     .xnq-parchment-iv:hover,
+     .xnq-parchment-v:hover {
+         transform: none;
+     }
+ }
