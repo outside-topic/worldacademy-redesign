@@ -3336,3 +3336,9 @@
      }
  }
  /* aaa end */
+
+.txtimg{
+    padding: 25px 25px 25px;
+    background: var(--white);
+    border-radius: 30px;
+}
