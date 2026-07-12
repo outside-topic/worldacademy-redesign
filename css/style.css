@@ -4865,3 +4865,8 @@
         }
     }
  }
+ .shrm_all_img{
+    img{
+        width: 500px !important;
+    }
+ }
