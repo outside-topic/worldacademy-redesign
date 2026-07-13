@@ -271,7 +271,7 @@
  /* ===== MISSION & VISION ===== */
  .mission-vision {
      padding: 100px 0;
-     background: var(--white);
+     background: var(--gold-faint);
      position: relative;
      overflow: hidden;
  }
@@ -4865,8 +4865,561 @@
         }
     }
  }
- .shrm_all_img{
-    img{
-        width: 500px !important;
-    }
- }
+
+
+
+ /* Footer start */
+ /* ============================================================
+           NEWSLETTER SECTION — Floating Premium Card
+           ============================================================ */
+        .newsletter-section {
+            position: relative;
+            z-index: 10;
+            margin-bottom: -64px;
+            padding: 0 0.75rem;
+        }
+
+        .newsletter-card {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+            padding: 2.75rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .newsletter-card:hover {
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ডেকোরেটিভ ব্লারড শেপ — কার্ডের ভেতরে */
+        .newsletter-card::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -50px;
+            width: 220px;
+            height: 220px;
+            background: var(--gold-faint);
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .newsletter-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 10%;
+            width: 180px;
+            height: 180px;
+            background: var(--gold-ultra-faint);
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .newsletter-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* আইকন বক্স */
+        .nl-icon-box {
+            width: 54px;
+            height: 54px;
+            background: var(--clr-primary-bg);
+            border-radius: var(--radius-lg);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .newsletter-card:hover .nl-icon-box {
+            background: var(--clr-primary-bg-hover);
+            transform: scale(1.06);
+        }
+
+        .nl-icon-box i {
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+
+        /* অ্যাকসেন্ট বার */
+        .nl-accent-bar {
+            width: 44px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-lighter));
+            border-radius: var(--radius-pill);
+            margin-bottom: 1rem;
+        }
+
+        .nl-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2.125rem;
+            color: var(--clr-text);
+            line-height: 1.15;
+            margin-bottom: 0.625rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nl-title .nl-highlight {
+            color: var(--gold);
+        }
+
+        .nl-subtitle {
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 0;
+            max-width: 400px;
+        }
+
+        .nl-input-group {
+            display: flex;
+            align-items: stretch;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nl-input {
+            flex: 1;
+            min-width: 0;
+            border: 2px solid var(--clr-border);
+            border-right: none;
+            border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+            padding: 0 1.25rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--clr-text);
+            background: var(--clr-white);
+            height: 54px;
+            outline: none;
+            transition: var(--transition-base);
+        }
+
+        .nl-input::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .nl-input:focus {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-input-focus);
+        }
+
+        .nl-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px solid var(--gold);
+            border-left: none;
+            border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            background: var(--gold);
+            color: var(--clr-white);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0 1.625rem;
+            height: 54px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .nl-btn:hover {
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+            box-shadow: var(--shadow-btn-hover);
+            color: var(--clr-white);
+        }
+
+        .nl-btn:active {
+            box-shadow: var(--shadow-btn-active);
+            transform: scale(0.98);
+        }
+
+        .nl-btn i {
+            font-size: 1rem;
+            transition: var(--transition-base);
+        }
+
+        .nl-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ডেকোরেটিভ ডট প্যাটার্ন */
+        .nl-dots {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(5, 6px);
+            gap: 8px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .nl-dots span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        /* মোবাইলে স্ট্যাকড ইনপুট */
+        @media (max-width: 575.98px) {
+            .nl-input-group {
+                flex-direction: column;
+                gap: 0.625rem;
+            }
+
+            .nl-input {
+                border-radius: var(--radius-xl);
+                border-right: 2px solid var(--clr-border);
+            }
+
+            .nl-btn {
+                border-radius: var(--radius-xl);
+                border-left: 2px solid var(--gold);
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================================
+           FOOTER — Premium Dark Layout
+           ============================================================ */
+        .site-footer {
+            position: relative;
+            background: var(--gold-dark);
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        /* ব্যাকগ্রাউন্ড ডেকোরেটিভ শেপ */
+        .footer-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .footer-bg-shape--1 {
+            top: -60px;
+            left: -120px;
+            width: 320px;
+            height: 320px;
+            background: var(--gold-dark);
+            filter: blur(120px);
+            opacity: 0.25;
+            animation: footerFloat 8s ease-in-out infinite;
+        }
+
+        .footer-bg-shape--2 {
+            bottom: 80px;
+            right: -100px;
+            width: 280px;
+            height: 280px;
+            background: var(--gold-dark);
+            filter: blur(100px);
+            opacity: 0.2;
+            animation: footerFloat 10s ease-in-out infinite reverse;
+        }
+
+        .footer-bg-shape--3 {
+            top: 40%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background: var(--gold-darker);
+            filter: blur(150px);
+            opacity: 0.35;
+            transform: translateX(-50%);
+        }
+
+        @keyframes footerFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(12px, -8px); }
+        }
+
+        /* ফুটার টপ ডিভাইডার */
+        .footer-top-divider {
+            position: relative;
+            z-index: 2;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border-gold) 25%, var(--border-gold) 75%, transparent 100%);
+            margin-bottom: 2.75rem;
+        }
+
+        /* ফুটার মেইন কন্টেন্ট */
+        .footer-main {
+            position: relative;
+            z-index: 2;
+            padding-bottom: 2.75rem;
+        }
+
+        /* কলাম হেডিং */
+        .footer-col-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 0.875rem;
+            transition: all ease 0.3s !important;
+        }
+
+        .footer-col-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            border-radius: var(--radius-pill);
+            transition: all ease 0.5s !important;
+        }
+        .footer-col-title:hover::after{
+            width: 100%;
+        }
+
+
+        .footer-brand-desc {
+            color: var(--white);
+            opacity: 0.55;
+            font-size: 0.85rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+
+
+        /* ============================================================
+           Column 2 & 3 — Links (Quick Links / Policies)
+           ============================================================ */
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5625rem 0.8125rem;
+            margin-bottom: 0.25rem;
+            border-radius: var(--radius-sm);
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: var(--transition-base);
+            position: relative;
+            span{
+                color: var(--white);
+            }
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+            background: rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+            padding-left: 1.0625rem;
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+            color: var(--white);
+            opacity: 0.55;
+            transition: var(--transition-base);
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .footer-link:hover i {
+            opacity: 1;
+            color: var(--gold-pale);
+        }
+
+        /* ============================================================
+           Column 4 — Social Icons
+           ============================================================ */
+        .footer-social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--border-gold);
+            background: rgba(255, 255, 255, 0.03);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.15rem;
+            transition: var(--transition);
+            text-decoration: none;
+            margin: 0 0.4375rem 0.4375rem 0;
+        }
+
+        .footer-social-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--clr-white);
+            box-shadow: var(--shadow-btn-hover);
+            transform: translateY(-4px);
+            text-decoration: none;
+        }
+
+        .footer-social-btn:active {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-btn-active);
+        }
+        
+        @media (max-width: 575.98px) {
+            .newsletter-section {
+                margin-bottom: -40px;
+                padding: 0 0.5rem;
+            }
+
+            .newsletter-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .nl-title {
+                font-size: 1.5rem;
+            }
+
+            .nl-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .nl-icon-box {
+                width: 46px;
+                height: 46px;
+                margin-bottom: 1rem;
+            }
+
+            .nl-icon-box i {
+                font-size: 1.2rem;
+            }
+
+            .nl-accent-bar {
+                margin-bottom: 0.75rem;
+            }
+
+            .nl-dots {
+                display: none;
+            }
+
+            .site-footer {
+                padding-top: 68px;
+            }
+
+            .footer-main {
+                padding-bottom: 1.75rem;
+            }
+
+            .footer-col-title {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            .footer-brand-desc {
+                font-size: 0.8125rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-social-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1.05rem;
+                margin: 0 0.375rem 0.375rem 0;
+            }
+
+            .footer-bottom {
+                text-align: center;
+            }
+
+            .footer-bottom .d-flex {
+                flex-direction: column !important;
+                gap: 0.625rem;
+            }
+
+            .footer-bottom-nav {
+                justify-content: center !important;
+            }
+
+            .footer-bottom-nav a {
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* 576px — 767px */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .newsletter-card {
+                padding: 2.25rem 1.75rem;
+            }
+
+            .nl-title {
+                font-size: 1.75rem;
+            }
+
+            .site-footer {
+                padding-top: 80px;
+            }
+        }
+
+        /* 768px — 991px */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .newsletter-card {
+                padding: 2.5rem 2rem;
+            }
+
+            .nl-title {
+                font-size: 1.875rem;
+            }
+
+            .nl-subtitle {
+                max-width: 320px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .newsletter-card {
+                padding: 3rem 3.5rem;
+            }
+
+            .nl-title {
+                font-size: 2.25rem;
+            }
+
+            .nl-subtitle {
+                max-width: 400px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .newsletter-card {
+                padding: 3.25rem 4rem;
+            }
+
+            .footer-main {
+                padding-bottom: 3rem;
+            }
+        }
+
+        
+ /* Footer end */
